@@ -450,54 +450,13 @@
       <div class="col-md-12">
         <div class="full">
           <div class="main_heading text_align_left">
-            <h2>Latest from Our Blog</h2>
+            <h2>Latest News</h2>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <div class="full blog_colum">
-          <div class="blog_feature_img"> <img src="{{ env('APP_URL') }}public/images/it_service/post-03.jpg" alt="#" /> </div>
-          <div class="post_time">
-            <p><i class="fa fa-clock-o"></i> April 16, 2018 ( In Maintenance )</p>
-          </div>
-          <div class="blog_feature_head">
-            <h4>Why Your Computer Hates You</h4>
-          </div>
-          <div class="blog_feature_cont">
-            <p>Lorem ipsum dolor sit amet, consectetur quam justo, pretium adipiscing elit. Vestibulum quam justo, pretium eu tempus ut, ...</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="full blog_colum">
-          <div class="blog_feature_img"> <img src="{{ env('APP_URL') }}public/images/it_service/post-04.jpg" alt="#" /> </div>
-          <div class="post_time">
-            <p><i class="fa fa-clock-o"></i> April 16, 2018 ( In Maintenance )</p>
-          </div>
-          <div class="blog_feature_head">
-            <h4>Easy Tips To Computer Repair</h4>
-          </div>
-          <div class="blog_feature_cont">
-            <p>Lorem ipsum dolor sit amet, consectetur quam justo, pretium adipiscing elit. Vestibulum quam justo, pretium eu tempus ut, ...</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="full blog_colum">
-          <div class="blog_feature_img"> <img src="{{ env('APP_URL') }}public/images/it_service/post-06.jpg" alt="#" /> </div>
-          <div class="post_time">
-            <p><i class="fa fa-clock-o"></i> April 16, 2018 ( In Maintenance )</p>
-          </div>
-          <div class="blog_feature_head">
-            <h4>Computer Maintenance 2018</h4>
-          </div>
-          <div class="blog_feature_cont">
-            <p>Lorem ipsum dolor sit amet, consectetur quam justo, pretium adipiscing elit. Vestibulum quam justo, pretium eu tempus ut, ...</p>
-          </div>
-        </div>
-      </div>
+      <x-news-card/>
     </div>
   </div>
 </div>
@@ -529,32 +488,30 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="testimonial-container">
-                  <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. 
-                    I am really satisfied with my first laptop service. </div>
+                  <div class="testimonial-content"> You guys rock! I was pleasantly surprised that they did the repair of my computer in a very short time. </div>
                   <div class="testimonial-photo"> <img src="{{ env('APP_URL') }}public/images/it_service/client1.jpg" class="img-responsive" alt="#" width="150" height="150"> </div>
                   <div class="testimonial-meta">
-                    <h4>Maria Anderson</h4>
-                    <span class="testimonial-position">CFO, Tech NY</span> </div>
+                    <h4>Elon Musk</h4>
+                    <span class="testimonial-position">CEO of SpaceX</span> </div>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="testimonial-container">
-                  <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. 
+                  <div class="testimonial-content"> Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. 
                     I am really satisfied with my first laptop service. </div>
                   <div class="testimonial-photo"> <img src="{{ env('APP_URL') }}public/images/it_service/client2.jpg" class="img-responsive" alt="#" width="150" height="150"> </div>
                   <div class="testimonial-meta">
-                    <h4>Maria Anderson</h4>
-                    <span class="testimonial-position">CFO, Tech NY</span> </div>
+                    <h4>Jeff Bezos</h4>
+                    <span class="testimonial-position">American entrepreneur</span> </div>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="testimonial-container">
-                  <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first. 
-                    I am really satisfied with my first laptop service. </div>
+                  <div class="testimonial-content"> You guys are great! Fast delivery of services. I ordered 50 games that arrived to me within 2 days, very fast delivery. Thank you guys a lot. </div>
                   <div class="testimonial-photo"> <img src="{{ env('APP_URL') }}public/images/it_service/client3.jpg" class="img-responsive" alt="#" width="150" height="150"> </div>
                   <div class="testimonial-meta">
-                    <h4>Maria Anderson</h4>
-                    <span class="testimonial-position">CFO, Tech NY</span> </div>
+                    <h4>Mate Rimac</h4>
+                    <span class="testimonial-position">Croatian innovator</span> </div>
                 </div>
               </div>
             </div>
@@ -593,15 +550,6 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="full">
-          <ul class="brand_list">
-            <li><img src="{{ env('APP_URL') }}public/images/it_service/brand_icon1.png" alt="#" /></li>
-            <li><img src="{{ env('APP_URL') }}public/images/it_service/brand_icon2.png" alt="#" /></li>
-            <li><img src="{{ env('APP_URL') }}public/images/it_service/brand_icon3.png" alt="#" /></li>
-            <li><img src="{{ env('APP_URL') }}public/images/it_service/brand_icon4.png" alt="#" /></li>
-            <li><img src="{{ env('APP_URL') }}public/images/it_service/brand_icon5.png" alt="#" /></li>
-          </ul>
-        </div>
       </div>
     </div>
   </div>
