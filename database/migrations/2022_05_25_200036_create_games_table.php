@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
-            $table->id();
+        Schema::create('game', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('title');
             $table->integer('quantity');
             $table->decimal('price');
