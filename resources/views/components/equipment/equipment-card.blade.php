@@ -1,5 +1,8 @@
+@props(['equipment'])
 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 margin_bottom_30_all">
-    <div class="product_list">
+  @unless (count($equipment)==0)
+  @foreach ($equipment as $eq) 
+  <div class="product_list">
       <div class="product_img"> <img class="img-responsive" src="{{ env('APP_URL') }}public/images/it_service/4.jpg" alt=""> </div>
       <div class="product_detail_btm">
         <div class="center">
@@ -13,4 +16,8 @@
         </div>
       </div>
     </div>
+    @endforeach
+    @else 
+    <p>No Equipment Yet.</p>
+    @endunless
   </div>

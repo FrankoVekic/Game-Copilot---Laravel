@@ -27,7 +27,7 @@ return new class extends Migration
             ->on('equipment');
             $table->foreign('game')
             ->references('id')
-            ->on('game');
+            ->on('games');
 
             
         });

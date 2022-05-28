@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Equipment;
 use App\Models\Game;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -16,6 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Game::factory(10)->create();
+        Equipment::factory(10)->create();
         
     }
 }
