@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\UserController;
 
@@ -37,6 +38,9 @@ Route::get('/logout',[UserController::class,'logout']);
 
 // Show Shopping Cart
 Route::get('/products/shopping_cart',[ShoppingCartController::class,'shoppingCart']);
+
+// Show All Equipment
+Route::get('/products/equipment',[ProductController::class,'equipment']);
 
 Auth::routes([
     'register' => false,
