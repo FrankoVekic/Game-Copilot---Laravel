@@ -16,9 +16,23 @@ use App\Http\Controllers\UserController;
 |
 */
 
+// Welcome Page
 Route::get('/',[HomeController::class,'index']);
 
+// Show Login Form
 Route::get('/login',[UserController::class,'login']);
+
+// Show Register Form
+Route::get('/register',[UserController::class,'create']);
+
+// User Registration
+Route::post('/users',[UserController::class,'store']);
+
+// User Log In
+Route::post('/users/authenticate',[UserController::class,'authenticate']);
+
+// User Log Out
+Route::get('/logout',[UserController::class,'logout']);
 
 Auth::routes([
     'register' => false,

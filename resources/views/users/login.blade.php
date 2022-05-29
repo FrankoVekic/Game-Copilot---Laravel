@@ -10,13 +10,20 @@
                 <h2 class="text_align_center">Log In Form</h2>
                 <div class="form_section">
                   <form class="form_contant" method="POST" action="{{ env('APP_URL') }}users/authenticate">
+                    @csrf
                     <fieldset>
                     <div class="row">
                       <div class="field col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <input class="field_custom" name="email" placeholder="Email adress" type="email">
+                        <input class="field_custom" value="{{ old('email') }}" name="email" placeholder="Email adress" type="email">
+                        @error('email')
+                        <p style="color: red; font-size:14px; margin-left:8px;">{{ $message }}</p>
+                        @enderror
                       </div>
                       <div class="field col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <input class="field_custom" name="password" placeholder="Password" type="password">
+                        <input class="field_custom" value="{{ old('password') }}" name="password" placeholder="Password" type="password">
+                        @error('password')
+                        <p  style="color: red; font-size:14px; margin-left:8px;">{{ $message }}</p>
+                        @enderror
                       </div>
                       <div class="center"><a href="/register">Don't have an account?</a></div>
                       <div class="center"><button class="btn main_bt" type="submit">Log In</button></div>

@@ -64,8 +64,13 @@
                   </li>
                   <li> <a href="">About Us</a>
                   </li>
+                  @auth
+                  <li> <a href="{{ env('APP_URL') }}logout">Log Out</a>
+                  </li>
+                  @else
                   <li> <a href="{{ env('APP_URL') }}login">Log In</a>
                   </li>
+                  @endauth                 
                 </ul>
               </div>
               <div class="search_icon">
