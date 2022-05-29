@@ -20,7 +20,8 @@ class EquipmentFactory extends Factory
             'title'=>$this->faker->jobTitle(),
             'quantity'=>10,
             'price'=>$this->faker->randomFloat(2,1,100),
-            'description'=>$this->faker->paragraph(7)
+            'description'=>$this->faker->paragraph(7),
+            'tags'=>'equipment, quality, best'
         ];
     }
 }

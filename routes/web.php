@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -33,6 +34,9 @@ Route::post('/users/authenticate',[UserController::class,'authenticate']);
 
 // User Log Out
 Route::get('/logout',[UserController::class,'logout']);
+
+// Show Shopping Cart
+Route::get('/products/shopping_cart',[ShoppingCartController::class,'shoppingCart']);
 
 Auth::routes([
     'register' => false,

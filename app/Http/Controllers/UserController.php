@@ -55,8 +55,7 @@ class UserController extends Controller
     public function logout()
     {
         auth()->logout();
-
-
+        
         return redirect('/');
 
     }

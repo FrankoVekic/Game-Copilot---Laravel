@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->integer('quantity');
             $table->decimal('price');
+            $table->string('tags');
             $table->longText('description');
             $table->string('image')->nullable();
             $table->timestamps();

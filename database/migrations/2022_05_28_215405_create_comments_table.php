@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('post')->unsigned();
             $table->timestamps();
             $table->foreign('writer')->references('id')->on('users');
-            $table->foreign('post')->references('id')->on('blog');
+            $table->foreign('post')->references('id')->on('blogs');
         });
     }
 

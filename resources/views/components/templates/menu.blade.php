@@ -57,7 +57,7 @@
                   </li>
                   <li> <a href="">Shop</a>
                     <ul>
-                      <li><a href="">Shopping Cart</a></li>
+                      <li><a href="{{ env('APP_URL') }}products/shopping_cart">Shopping Cart</a></li>
                       <li><a href="">Equipment</a></li>
                       <li><a href="">Games</a></li>
                     </ul>
