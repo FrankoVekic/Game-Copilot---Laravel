@@ -15,7 +15,7 @@
 <meta name="description" content="">
 <meta name="author" content="Franko Vekić">
 <!-- site icons -->
-<link rel="icon" href="images/fevicon/fevicon.png" type="image/gif" />
+<link rel="icon" href="{{ env('APP_URL') }}public/images/fevicon/fvcon.png" type="image/gif" />
 <!-- bootstrap css -->
 <link rel="stylesheet" href="{{ env('APP_URL') }}public/css/bootstrap.min.css" />
 <!-- Site css -->
