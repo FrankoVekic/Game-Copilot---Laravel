@@ -10,7 +10,7 @@ class ProductController extends Controller
     public function equipment()
     {
         return view('products.equipment',[
-            'equipment'=>Equipment::all()
+            'equipment'=>Equipment::latest()->simplePaginate(6)
         ]);
     }
 }
