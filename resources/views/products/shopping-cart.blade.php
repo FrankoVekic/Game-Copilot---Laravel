@@ -40,6 +40,7 @@
                   
               </tbody>
             </table>
+            <div class="shopping-cart">
             <table class="table">
               <tbody>
                 <tr class="cart-form">
@@ -52,8 +53,10 @@
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
           <div class="shopping-cart-cart">
+            <div class="shopping-cart">
             <table>
               <tbody>
                 <tr class="head-table">
@@ -79,6 +82,7 @@
               </tbody>
             </table>
           </div>
+        </div>
         </div>
       </div>
     </div>

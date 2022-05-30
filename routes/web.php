@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +37,7 @@ Route::post('/users/authenticate',[UserController::class,'authenticate']);
 Route::get('/logout',[UserController::class,'logout']);
 
 // Show Shopping Cart
-Route::get('/products/shopping_cart',[ShoppingCartController::class,'shoppingCart']);
+Route::get('/products/shopping_cart',[CartController::class,'index']);
 
 // Show All Equipment
 Route::get('/products/equipment',[ProductController::class,'equipment']);
