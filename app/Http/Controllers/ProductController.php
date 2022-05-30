@@ -13,4 +13,11 @@ class ProductController extends Controller
             'equipment'=>Equipment::latest()->paginate(6)
         ]);
     }
+
+    public function show(Equipment $equipment)
+    {
+        return view('products.product-detail',[
+            'equipment'=> $equipment
+        ]);   
+    }
 }

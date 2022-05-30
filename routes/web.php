@@ -42,6 +42,9 @@ Route::get('/products/shopping_cart',[CartController::class,'index']);
 // Show All Equipment
 Route::get('/products/equipment',[ProductController::class,'equipment']);
 
+// Show Single Equipment
+Route::get('/products/{equipment}',[ProductController::class,'show']);
+
 Auth::routes([
     'register' => false,
     'reset' => false,
