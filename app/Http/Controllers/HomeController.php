@@ -17,7 +17,7 @@ class HomeController extends Controller
     {
         return view('welcome',[
             'equipment'=>Product::select("*")
-            ->where("slug", "like", "eq%")->take(8)
+            ->where("slug", "like", "eq%")->take(8)->inRandomOrder()
             ->get()
         ]);
     }

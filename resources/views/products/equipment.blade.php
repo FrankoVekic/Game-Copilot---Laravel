@@ -27,7 +27,7 @@
         <div class="col-md-9">
           <div class="row">
             @foreach ( $equipment as $eq )
-            <x-equipment.equipment-shop-card :equipment="$eq"/>
+            <x-products.product-shop-card :equipment="$eq"/>
             @endforeach         
           </div>
           <div class="center">

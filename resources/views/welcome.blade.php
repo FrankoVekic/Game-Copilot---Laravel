@@ -390,7 +390,7 @@
     <div class="row">
       @unless (count($equipment)==0)
       @foreach ($equipment as $eq) 
-        <x-equipment.equipment-card :equipment="$eq"/>
+        <x-products.product-card :equipment="$eq"/>
       @endforeach
       @else 
         <p>No Equipment Yet.</p>

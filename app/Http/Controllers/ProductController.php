@@ -14,10 +14,16 @@ class ProductController extends Controller
         ]);
     }
 
-    public function show(Product $equipment)
+    public function show(Product $product)
     {
+        $related = Product::select("*")
+        ->where("slug", "like", "eq%")->take(3)->inRandomOrder()
+        ->get();
+
         return view('products.product-detail',[
-            'equipment'=> $equipment
+            'product'=> $product,
+            'related'=> $related
         ]);   
+        
     }
 }
