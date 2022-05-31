@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Game>
  */
-class GameFactory extends Factory
+class ProductFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,12 +17,7 @@ class GameFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'title'=>$this->faker->jobTitle(),
-            'quantity'=>10,
-            'price'=>$this->faker->randomFloat(2,1,100),
-            'description'=>$this->faker->paragraph(7),
-            'tags'=>'game, pc, product'
-        ];
-    }
+        //
+    }       
 }
+
