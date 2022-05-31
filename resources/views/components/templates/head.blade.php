@@ -33,5 +33,7 @@
 <link rel="stylesheet" type="text/css" href="{{ env('APP_URL') }}public/revolution/css/layers.css" />
 <link rel="stylesheet" type="text/css" href="{{ env('APP_URL') }}public/revolution/css/navigation.css" />
 
+<link rel='stylesheet' href="{{ env('APP_URL') }}public/css/hizoom.css">
+
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">

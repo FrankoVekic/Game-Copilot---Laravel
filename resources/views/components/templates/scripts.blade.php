@@ -125,6 +125,18 @@
            });
          }
       </script>
+
+<script src='{{ env('APP_URL') }}public/js/hizoom.js'></script>
+<script>
+        $('.hi1').hiZoom({
+            width: 300,
+            position: 'right'
+        });
+        $('.hi2').hiZoom({
+            width: 400,
+            position: 'right'
+        });
+    </script>
 <!-- google map js -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
 <!-- end google map js -->

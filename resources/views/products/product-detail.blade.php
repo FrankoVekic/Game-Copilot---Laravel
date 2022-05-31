@@ -28,7 +28,7 @@
           <div class="row">
             <div class="col-xl-6 col-lg-12 col-md-12">
               <div class="product_detail_feature_img hizoom hi2">
-                <div class='hizoom hi2'> <img src="images/it_service/1.jpg" alt="#" /> </div>
+                <div class='hizoom hi2'> <img src="{{ env('APP_URL') }}public/images/shop/noimg.png" alt="#" /> </div>
               </div>
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 product_detail_side detail_style1">
