@@ -33,13 +33,12 @@
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 product_detail_side detail_style1">
               <div class="product-heading">
-                <h2>Norton Internet Security</h2>
+                <h2>{{ $product->title }}</h2>
               </div>
-              <div class="product-detail-side"> <span><del>$25.00</del></span><span class="new-price">$20.00</span> <span class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> </span> <span class="review">(5 customer review)</span> </div>
+              <div class="product-detail-side"><span class="new-price">${{ $product->price }}</span> <span class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> </span> <span class="review">(5 customer review)</span> </div>
               <div class="detail-contant">
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. 
-                  Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.<br>
-                  <span class="stock">2 in stock</span> </p>
+                <p>{{ $product->description }}<br><br>
+                  <span class="stock">{{ $product->quantity }} in stock</span> </p>
                 <form class="cart" method="post" action="it_cart.html">
                   <div class="quantity">
                     <input step="1" min="1" max="5" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" type="number">
@@ -143,7 +142,7 @@
           <div class="row">
           @unless (count($related)==0)
           @foreach ($related as $rel)
-           <x-products.related-products :related="$rel"/>
+           <x-products.related-eq :related="$rel"/>
            @endforeach
            @else 
              <p>No Related Products.</p>

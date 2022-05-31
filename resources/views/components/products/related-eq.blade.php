@@ -1,6 +1,5 @@
 @props(['related'])
 
-
     <div class="col-md-4 col-sm-6 col-xs-12 margin_bottom_30_all">
       <div class="product_list">
         <div class="product_img"> <img class="img-responsive" src="{{ env('APP_URL') }}public/images/shop/noimg.png" alt=""> </div>

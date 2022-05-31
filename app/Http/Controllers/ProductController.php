@@ -10,20 +10,25 @@ class ProductController extends Controller
     public function equipment()
     {
         return view('products.equipment',[
-            'equipment'=>Product::latest()->paginate(12)
+            'products'=>Product::where('slug','like','eq%')->paginate($perPage = 12)
+        ]);
+    }
+
+    public function games()
+    {
+        return view('products.games',[
+            'products'=>Product::where('slug','like','ga%')->paginate($perPage = 12)
         ]);
     }
 
     public function show(Product $product)
-    {
-        $related = Product::select("*")
-        ->where("slug", "like", "eq%")->take(3)->inRandomOrder()
-        ->get();
+    {      
+
+        $related = Product::inRandomOrder()->limit(3)->get();
 
         return view('products.product-detail',[
             'product'=> $product,
             'related'=> $related
-        ]);   
-        
+        ]);          
     }
 }

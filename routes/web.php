@@ -42,8 +42,11 @@ Route::get('/products/shopping_cart',[CartController::class,'index']);
 // Show All Equipment
 Route::get('/products/equipment',[ProductController::class,'equipment']);
 
+// Show All Games
+Route::get('/products/games',[ProductController::class,'games']);
+
 // Show Single Equipment
-Route::get('/products/{equipment}',[ProductController::class,'show']);
+Route::get('/products/{product}',[ProductController::class,'show']);
 
 Auth::routes([
     'register' => false,
