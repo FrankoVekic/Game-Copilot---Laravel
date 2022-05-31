@@ -23,14 +23,14 @@ class ProductSeeder extends Seeder
                  'quantity'=>10,
                  'price'=>99.99,
                  'description'=>'Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-                 'slug'=>'Game '.$i
+                 'slug'=>'game-'.$i
              ]);
             Product::create([
                  'title'=> 'Equipment Title '.$i,
                  'quantity'=>10,
                  'price'=>99.99,
                  'description'=>'Ipsum temporibus iusto ipsa, asperiores voluptas unde aspernatur praesentium in? Aliquam, dolore!',
-                 'slug'=>'Equipment '.$i
+                 'slug'=>'equipment-'.$i
              ]);
         }
 

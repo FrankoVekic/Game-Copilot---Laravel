@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Equipment;
-use App\Models\Game;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,7 +16,9 @@ class HomeController extends Controller
     public function index()
     {
         return view('welcome',[
-            'equipment'=>Equipment::all()->random(8)
+            'equipment'=>Product::select("*")
+            ->where("slug", "like", "eq%")->take(8)
+            ->get()
         ]);
     }
 }

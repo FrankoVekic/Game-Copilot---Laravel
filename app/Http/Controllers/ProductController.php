@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Equipment;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -10,11 +10,11 @@ class ProductController extends Controller
     public function equipment()
     {
         return view('products.equipment',[
-            'equipment'=>Equipment::latest()->paginate(6)
+            'equipment'=>Product::latest()->paginate(12)
         ]);
     }
 
-    public function show(Equipment $equipment)
+    public function show(Product $equipment)
     {
         return view('products.product-detail',[
             'equipment'=> $equipment
