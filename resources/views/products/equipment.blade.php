@@ -26,15 +26,19 @@
       <div class="row">
         <div class="col-md-9">
           <div class="row">
+            @unless (count($products)==0)
             @foreach ( $products as $eq )
             <x-products.product-shop-card :product="$eq"/>
-            @endforeach         
+            @endforeach  
+            @else 
+             <p>No Equipment Found.</p>
+           @endunless       
           </div>
           <div class="center">
           {{ $products->links() }}
           </div>
         </div>        
-        <x-partials.sidebar/>
+        <x-partials.sidebar :slug="$slug"/>
       </div>
     </div>
   </div>

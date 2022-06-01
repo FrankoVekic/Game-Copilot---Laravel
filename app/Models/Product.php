@@ -13,4 +13,12 @@ class Product extends Model
         'title','price','quantity','description','slug','image'
     ];
 
+public function scopeFilter($query, array $filters)
+{
+    if($filters['search'] ?? false){
+        $query->where('title', 'like', '%' . request()->search . '%')
+        ->orWhere('description','like','%' . request()->search . '%')
+        ->orWhere('slug','like','%' . request()->search . '%');
+    }
+  }
 }

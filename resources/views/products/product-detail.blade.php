@@ -149,7 +149,8 @@
            @endunless
           </div>
         </div>
-      </div>
+        <x-partials.sidebar :slug="$slug"/>
+      </div>     
     </div>
   </div>
 </x-app>
