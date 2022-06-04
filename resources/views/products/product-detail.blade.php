@@ -38,13 +38,19 @@
               <div class="product-detail-side"><span class="new-price">${{ $product->price }}</span> <span class="rating"> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i> </span> <span class="review">(5 customer review)</span> </div>
               <div class="detail-contant">
                 <p>{{ $product->description }}<br><br>
+                  @unless ($product->quantity <=0)
                   <span class="stock">{{ $product->quantity }} in stock</span> </p>
-                <form class="cart" method="post" action="it_cart.html">
-                  <div class="quantity">
-                    <input step="1" min="1" max="5" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" type="number">
-                  </div>
+                  <form class="cart" method="post" action="{{ env('APP_URL') }}products/shopping_cart">
+                    @csrf
+                    <div class="quantity">
+                      <input step="1" min="1" max="{{ $product->quantity }}" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" type="number">
+                    </div>
                   <button type="submit" class="btn sqaure_bt">Add to cart</button>
+                  <input type="hidden" value="{{ $product->id }}" name="product_id">
                 </form>
+                @else
+                <span class="stock" style="color:red; font-weight: bold;">OUT OF STOCK</span>
+                @endunless
               </div>
               <div class="share-post"> <a href="#" class="share-text">Share</a>
                 <ul class="social_icons">

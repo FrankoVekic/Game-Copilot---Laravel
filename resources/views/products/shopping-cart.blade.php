@@ -34,10 +34,14 @@
                   <th> </th>
                 </tr>
               </thead>
-              <tbody>
-                  
-                    <x-cart-item/>
-                  
+              <tbody>      
+                @unless (count($cartProducts)==0)
+                  @foreach ( $cartProducts as $product )
+                  <x-cart-item :product="$product"/>
+                  @endforeach  
+                @else 
+                  <p>Cart is empty</p>
+                @endunless                      
               </tbody>
             </table>
             <div class="shopping-cart">

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
@@ -13,7 +15,9 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('products.shopping-cart');
+        return view('products.shopping-cart',[
+            'cartProducts'=>Cart::instance('default')->content(),
+        ]);
     }
 
     /**
@@ -33,8 +37,20 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+            $cart = Product::where('id', '=', "$request->product_id")->first();
+            Cart::instance('default')->add(
+                $cart->id,
+                $cart->title,
+                $request->quantity,
+                $cart->price,
+                0,
+                ['description' => $cart->description,
+                 'slug' => $cart->slug,
+                 'image'=> $cart->image,
+                 'totalQty' => $cart->quantity])
+                 ->associate('\App\Models\Product');
+            return redirect('/products/shopping_cart');
     }
 
     /**

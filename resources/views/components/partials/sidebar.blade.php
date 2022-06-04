@@ -14,10 +14,6 @@
         </div>
       </div>
       <div class="side_bar_blog">
-        <h4>GET A QUOTE</h4>
-        <p>An duo lorem altera gloriatur. No imperdiet adver sarium pro. No sit sumo lorem. Mei ea eius elitr consequ unturimperdiet.</p>
-        <a class="btn sqaure_bt" href="it_service.html">View Service</a> </div>
-      <div class="side_bar_blog">
         <h4>OUR SERVICE</h4>
         <div class="categary">
           <ul>

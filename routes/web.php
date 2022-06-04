@@ -39,6 +39,9 @@ Route::get('/logout',[UserController::class,'logout']);
 // Show Shopping Cart
 Route::get('/products/shopping_cart',[CartController::class,'index']);
 
+// Add To Cart
+Route::post('/products/shopping_cart',[CartController::class,'store']);
+
 // Show All Equipment
 Route::get('/products/equipment',[ProductController::class,'equipment']);
 
