@@ -37,7 +37,7 @@
               <tbody>      
                 @unless (count($cartProducts)==0)
                   @foreach ( $cartProducts as $product )
-                  <x-cart-item :product="$product"/>
+                  <x-shopping-cart.cart-item :product="$product"/>
                   @endforeach  
                 @else 
                   <p>Cart is empty</p>
@@ -67,18 +67,9 @@
                   <td><h5>Cart Totals</h5></td>
                   <td class="text-right"></td>
                 </tr>
-                <tr>
-                  <td><h4>Subtotal</h4></td>
-                  <td class="text-right"><h4>$50.00</h4></td>
-                </tr>
-                <tr>
-                  <td><h5>Estimated shipping</h5></td>
-                  <td class="text-right"><h4>$5.00</h4></td>
-                </tr>
-                <tr>
-                  <td><h3>Total</h3></td>
-                  <td class="text-right"><h4>$55.00</h4></td>
-                </tr>
+                <x-shopping-cart.subtotal :subtotal="$cartSubtotal"/>
+                <x-shopping-cart.shipping :shipping="$shipping"/>
+                <x-shopping-cart.total :total="$newTotal"/>
                 <tr>
                   <td><button type="button" class="button">Continue Shopping</button></td>
                   <td><button class="button">Checkout</button></td>

@@ -15,8 +15,16 @@ class CartController extends Controller
      */
     public function index()
     {
+        $cartProducts = Cart::instance('default')->content();
+        $cartSubtotal = Cart::instance('default')->subtotal();
+        $shipping = config('cart.shipping');
+        $newTotal = $cartSubtotal+ $shipping;
+
         return view('products.shopping-cart',[
-            'cartProducts'=>Cart::instance('default')->content(),
+            'cartProducts'=>$cartProducts,
+            'cartSubtotal' => $cartSubtotal,
+            'shipping'=> $shipping,
+            'newTotal'=> $newTotal
         ]);
     }
 
