@@ -1,3 +1,4 @@
+@props(['cartProducts'])
 <!-- header -->
 <header id="default_header" class="header_style_1">
     <!-- header top -->
@@ -57,7 +58,11 @@
                   </li>
                   <li> <a href="">Shop</a>
                     <ul>
+                      @unless (Cart::count()==0)
+                      <li><a href="{{ env('APP_URL') }}products/shopping_cart">Shopping Cart ({{ Cart::count() }})</a></li>
+                      @else
                       <li><a href="{{ env('APP_URL') }}products/shopping_cart">Shopping Cart</a></li>
+                      @endunless                     
                       <li><a href="{{ env('APP_URL') }}products/equipment">Equipment</a></li>
                       <li><a href="{{ env('APP_URL') }}products/games">Games</a></li>
                     </ul>
