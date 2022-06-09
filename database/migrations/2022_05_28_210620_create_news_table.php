@@ -15,11 +15,10 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->increments('id');
+            $table->foreignId('user_id')->constrained('users','id')->onDelete('cascade');
             $table->string('headline');
             $table->longText('article');
             $table->string('image')->nullable();
-            $table->integer('author')->unsigned();
-            $table->foreign('author')->references('id')->on('users');
             $table->timestamps();
         });
     }

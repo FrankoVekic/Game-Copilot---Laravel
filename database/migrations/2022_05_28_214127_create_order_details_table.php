@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('buyer')->unsigned();
+            $table->foreignId('user_id')->constrained('users','id')->onDelete('cascade');
             $table->date('order_date')->format('d/m/Y');
             $table->string('address');
             $table->string('city');
             $table->string('country');
-            $table->foreign('buyer')->references('id')->on('users');
         });
     }
 

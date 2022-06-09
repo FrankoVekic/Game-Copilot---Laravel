@@ -18,8 +18,8 @@ class NewsFactory extends Factory
     {
         return [
             'headline'=>$this->faker->name(),
-            'article'=>$this->faker->paragraph(),
-            'author'=>1
+            'article'=>$this->faker->paragraph(20),
+            'user_id'=>1
         ];
     }
 }

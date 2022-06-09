@@ -10,7 +10,15 @@ class NewsController extends Controller
     public function index()
     {
         return view('news.index',[
-            'allNews'=>News::all()
+            'allNews'=>News::latest()->filter
+            (request(['search']))->paginate(6)
+        ]);
+    }
+
+    public function show(News $news)
+    {
+        return view('news.news-detail',[
+            'news'=>$news
         ]);
     }
 }
