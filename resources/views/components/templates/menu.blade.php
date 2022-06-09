@@ -51,7 +51,7 @@
                 <ul class="first-ul">
                   <li> <a class="active" href="/">Home</a>
                   </li>
-                  <li><a href="">News</a></li>
+                  <li><a href="{{ env('APP_URL') }}news/index">News</a></li>
                   <li> <a href="">Blog</a>
                   </li>
                   <li> <a href="#">Service</a>

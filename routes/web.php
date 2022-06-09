@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 
@@ -48,7 +49,10 @@ Route::get('/products/equipment',[ProductController::class,'equipment']);
 // Show All Games
 Route::get('/products/games',[ProductController::class,'games']);
 
-// Show Single Equipment
+// Show All News
+Route::get('/news/index',[NewsController::class,'index']);
+
+// Show Single Product
 Route::get('/products/{product}',[ProductController::class,'show']);
 
 Auth::routes([

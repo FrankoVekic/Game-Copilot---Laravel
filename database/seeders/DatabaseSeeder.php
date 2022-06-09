@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Product;
+use App\Models\News;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -18,6 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ProductSeeder::class,
         ]);
+        User::factory(1)->create();
+        News::factory(3)->create();
 
         
     }
