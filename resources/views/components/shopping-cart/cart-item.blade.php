@@ -7,6 +7,6 @@
     <td class="col-md-1" style="text-align: center"><input class="form-control" value="{{ $product->qty }}" type="email">
     </td>
     <td class="col-sm-1 col-md-1 text-center"><p class="price_table">${{ $product->price }}</p></td>
-    <td class="col-sm-1 col-md-1 text-center"><p class="price_table">$25.00</p></td>
+    <td class="col-sm-1 col-md-1 text-center"><p class="price_table">${{ $product->price*$product->qty }}</p></td>
     <td class="col-md-1"><button type="button" class="bt_main"><i class="fa fa-trash"></i> Remove</button></td>
   </tr>
