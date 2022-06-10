@@ -463,7 +463,9 @@
       </div>
     </div>
     <div class="row">
-      <x-news-card/>
+      @foreach ($news as $news )
+      <x-news-card :news="$news"/>   
+      @endforeach
     </div>
   </div>
 </div>

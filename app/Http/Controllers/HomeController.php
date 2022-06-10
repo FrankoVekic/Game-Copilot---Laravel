@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,8 @@ class HomeController extends Controller
         return view('welcome',[
             'equipment'=>Product::select("*")
             ->where("slug", "like", "eq%")->take(4)->inRandomOrder()
-            ->get()
+            ->get(),
+            'news'=>News::orderBy('id','desc')->take(3)->get()
         ]);
     }
 
