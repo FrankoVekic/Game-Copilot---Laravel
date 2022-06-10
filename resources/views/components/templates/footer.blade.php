@@ -9,9 +9,9 @@
           <div class="row">
             <div class="col-md-6">
               <div class="main-heading left_text">
-                <h2>It Next Theme</h2>
+                <h2>Game-Copilot</h2>
               </div>
-              <p>Tincidunt elit magnis nulla facilisis. Dolor sagittis maecenas. Sapien nunc amet ultrices, dolores sit ipsum velit purus aliquet, massa fringilla leo orci.</p>
+              <p>Game-Copilot was founded in {{ date('Y') }}.</p>
               <ul class="social_icons">
                 <li class="social-icon fb"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li class="social-icon tw"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -23,11 +23,11 @@
                 <h2>Additional links</h2>
               </div>
               <ul class="footer-menu">
-                <li><a href="it_about.html"><i class="fa fa-angle-right"></i> About us</a></li>
-                <li><a href="it_term_condition.html"><i class="fa fa-angle-right"></i> Terms and conditions</a></li>
-                <li><a href="it_privacy_policy.html"><i class="fa fa-angle-right"></i> Privacy policy</a></li>
-                <li><a href="it_news.html"><i class="fa fa-angle-right"></i> News</a></li>
-                <li><a href="it_contact.html"><i class="fa fa-angle-right"></i> Contact us</a></li>
+                <li><a href="{{ env('APP_URL') }}about-us"><i class="fa fa-angle-right"></i> About us</a></li>
+                <li><a href="{{ env('APP_URL') }}products/equipment"><i class="fa fa-angle-right"></i> Equipment</a></li>
+                <li><a href="{{ env('APP_URL') }}products/games"><i class="fa fa-angle-right"></i> Games</a></li>
+                <li><a href="{{ env('APP_URL') }}news/index"><i class="fa fa-angle-right"></i> News</a></li>
+                <li><a href="{{ env('APP_URL') }}blog/index"><i class="fa fa-angle-right"></i> Blog</a></li>
               </ul>
             </div>
             <div class="col-md-6">
@@ -46,8 +46,8 @@
               <div class="main-heading left_text">
                 <h2>Contact us</h2>
               </div>
-              <p>123 Second Street Fifth Avenue,<br>
-                Manhattan, New York<br>
+              <p>Pere Perića Street 1<br>
+                31000,Osijek<br>
                 <span style="font-size:18px;"><a href="tel:+9876543210">+987 654 3210</a></span></p>
               <div class="footer_mail-section">
                 <form>
@@ -63,7 +63,7 @@
           </div>
         </div>
         <div class="cprt">
-          <p>ItNext © Copyrights 2019 Design by html.design</p>
+          <p>Game-Copilot © Copyrights {{ date('Y') }}</p>
         </div>
       </div>
     </div>

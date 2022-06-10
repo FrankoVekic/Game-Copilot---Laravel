@@ -67,7 +67,7 @@
                       <li><a href="{{ env('APP_URL') }}products/games">Games</a></li>
                     </ul>
                   </li>
-                  <li> <a href="">About Us</a>
+                  <li> <a href="{{ env('APP_URL') }}about-us">About Us</a>
                   </li>
                   @auth
                   <li> <a href="{{ env('APP_URL') }}logout">Log Out</a>

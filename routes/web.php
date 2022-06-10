@@ -52,6 +52,9 @@ Route::get('/products/games',[ProductController::class,'games']);
 // Show All News
 Route::get('/news/index',[NewsController::class,'index']);
 
+// Show About Us 
+Route::get('/about-us',[HomeController::class,'about']);
+
 // Show Single News
 Route::get('/news/{news}',[NewsController::class,'show']);
 

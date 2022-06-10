@@ -14,8 +14,7 @@ class News extends Model
 {
     if($filters['search'] ?? false){
         $query->where('headline', 'like', '%' . request()->search . '%')
-        ->orWhere('article','like','%' . request()->search . '%')
-        ->orWhere('author','like','%' . request()->search . '%');
+        ->orWhere('article','like','%' . request()->search . '%');
     }
   }
 

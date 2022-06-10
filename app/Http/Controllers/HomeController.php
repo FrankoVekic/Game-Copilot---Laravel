@@ -21,4 +21,9 @@ class HomeController extends Controller
             ->get()
         ]);
     }
+
+    public function about()
+    {
+        return view('about');
+    }
 }
