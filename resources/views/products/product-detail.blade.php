@@ -155,7 +155,13 @@
            @endunless
           </div>
         </div>
-        <x-partials.sidebar :slug="$slug"/>
+        <div class="col-md-3">    
+          <div class="side_bar">
+          <x-sidebar.search :slug="$slug"/>
+          <x-sidebar.news :news="$sideNews"/>
+          <x-sidebar.services/>
+          </div>
+        </div>
       </div>     
     </div>
   </div>

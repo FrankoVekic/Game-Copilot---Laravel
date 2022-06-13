@@ -33,7 +33,13 @@
             {{ $allNews->links() }}
             </div>
         </div>
-        <x-partials.sidebarNews/>
+        <div class="col-md-3">    
+          <div class="side_bar">
+          <x-sidebar.searchForNews/>
+          <x-sidebar.news :news="$sideNews"/>
+          <x-sidebar.services/>
+          </div>
+        </div>
       </div>
     </div>
   </div>

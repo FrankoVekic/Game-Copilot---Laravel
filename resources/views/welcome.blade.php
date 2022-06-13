@@ -81,7 +81,7 @@
                               data-splitin="none" 
                               data-splitout="none" 
                               data-responsive_offset="on" 
-                              style="z-index: 7; white-space: nowrap;">Available On CyberX Mobile App </div>
+                              style="z-index: 7; white-space: nowrap;">Available On Game-Copilot Mobile App </div>
             </li>
             <li data-index="rs-181" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="{{ env('APP_URL') }}public/images/it_service/slide2.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Best PC/PS Games" data-description="">
               <!-- MAIN IMAGE -->
@@ -157,7 +157,7 @@
                               data-splitin="none" 
                               data-splitout="none" 
                               data-responsive_offset="on" 
-                              style="z-index: 7; white-space: nowrap;">Available On CyberX Mobile App </div>
+                              style="z-index: 7; white-space: nowrap;">Available On Game-Copilot Mobile App </div>
             </li>
             <li data-index="rs-18" data-transition="zoomin" data-slotamount="7"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"  data-thumb="{{ env('APP_URL') }}public/images/it_service/slide3.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Computer Repairs" data-description="">
               <!-- MAIN IMAGE -->
@@ -233,7 +233,7 @@
                               data-splitin="none" 
                               data-splitout="none" 
                               data-responsive_offset="on" 
-                              style="z-index: 7; white-space: nowrap;">Available On CyberX Mobile App </div>
+                              style="z-index: 7; white-space: nowrap;">Available On Game-Copilot Mobile App </div>
             </li>
           </ul>
           <div class="tp-static-layers"></div>

@@ -7,5 +7,4 @@
     <td><h5>Estimated shipping</h5></td>
     <td class="text-right"><h4>$0.00</h4></td>
     @endunless
-
 </tr>

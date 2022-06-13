@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class ProductController extends Controller
     {
         return view('products.equipment',[
             'products'=>Product::where('slug','like','eq%')->filter(request(['search']))->paginate($perPage = 12),
-            'slug'=>'equipment'
+            'slug'=>'equipment',
+            'sideNews'=>News::orderBy('id','desc')->take(4)->get()
         ]);
     }
 
@@ -19,7 +21,8 @@ class ProductController extends Controller
     {
         return view('products.games',[
             'products'=>Product::where('slug','like','ga%')->filter(request(['search']))->paginate($perPage = 12),
-            'slug'=>'games'
+            'slug'=>'games',
+            'sideNews'=>News::orderBy('id','desc')->take(4)->get()
         ]);
     }
 
@@ -35,7 +38,8 @@ class ProductController extends Controller
                 return view('products.product-detail',[
                     'product'=> $product,
                     'related'=> $related,
-                    'slug'=>'games'
+                    'slug'=>'games',
+                    'sideNews'=>News::orderBy('id','desc')->take(4)->get()
                 ]);  
             }
             else {
@@ -47,7 +51,8 @@ class ProductController extends Controller
                 return view('products.product-detail',[
                     'product'=> $product,
                     'related'=> $related,
-                    'slug'=>'equipment'
+                    'slug'=>'equipment',
+                    'sideNews'=>News::orderBy('id','desc')->take(4)->get()
                 ]);  
             }
         }
