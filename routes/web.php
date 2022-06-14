@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
@@ -54,6 +55,9 @@ Route::get('/news/index',[NewsController::class,'index']);
 
 // Show About Us 
 Route::get('/about-us',[HomeController::class,'about']);
+
+// Show All Blogs
+Route::get('/blogs/index',[BlogsController::class,'index']);
 
 // Show Single News
 Route::get('/news/{news}',[NewsController::class,'show']);

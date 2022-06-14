@@ -52,7 +52,7 @@
                   <li> <a class="active" href="/">Home</a>
                   </li>
                   <li><a href="{{ env('APP_URL') }}news/index">News</a></li>
-                  <li> <a href="">Blog</a>
+                  <li> <a href="{{ env('APP_URL') }}blogs/index">Blog</a>
                   </li>
                   <li> <a href="#">Service</a>
                   </li>

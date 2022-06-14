@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('blogs', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->foreignId('user_id')->constrained('users','id')->onDelete('cascade');
             $table->string('title');
             $table->longText('description');

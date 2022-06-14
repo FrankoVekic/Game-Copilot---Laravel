@@ -11,7 +11,7 @@ class News extends Model
 
 
     public function scopeFilter($query, array $filters)
-{
+  {
     if($filters['search'] ?? false){
         $query->where('headline', 'like', '%' . request()->search . '%')
         ->orWhere('article','like','%' . request()->search . '%');
