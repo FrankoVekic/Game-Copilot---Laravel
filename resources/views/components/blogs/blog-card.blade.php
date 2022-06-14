@@ -19,7 +19,7 @@
         </div>
         </div>
         <div class="bottom_info">
-          <div class="center"><a class="btn sqaure_bt" href="">Read More<i class="fa fa-angle-right"></i></a></div>
+          <div class="center"><a class="btn sqaure_bt" href="{{ env('APP_URL') }}blogs/{{ $blog->id }}">Read More<i class="fa fa-angle-right"></i></a></div>
         </div>
     </div>
     </div>

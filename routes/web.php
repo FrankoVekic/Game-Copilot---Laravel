@@ -59,6 +59,9 @@ Route::get('/about-us',[HomeController::class,'about']);
 // Show All Blogs
 Route::get('/blogs/index',[BlogsController::class,'index']);
 
+// Show Single Blog
+Route::get('/blogs/{blog}',[BlogsController::class,'show']);
+
 // Show Single News
 Route::get('/news/{news}',[NewsController::class,'show']);
 

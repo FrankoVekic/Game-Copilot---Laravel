@@ -16,4 +16,13 @@ class BlogsController extends Controller
             'sideNews'=>News::orderBy('id','desc')->take(4)->get()
         ]);
     }
+
+    public function show(Blog $blog)
+    {
+        return view('blogs.blog-detail',[
+            'blog'=>$blog,
+            'comments'=>$blog->comments,
+            'sideNews'=>News::orderBy('id','desc')->take(4)->get()
+        ]);
+    }
 }
