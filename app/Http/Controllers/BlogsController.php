@@ -19,9 +19,10 @@ class BlogsController extends Controller
 
     public function show(Blog $blog)
     {
+        $blogs = $blog->comments();
         return view('blogs.blog-detail',[
             'blog'=>$blog,
-            'comments'=>$blog->comments,
+            'comments'=>$blogs->paginate(4),
             'sideNews'=>News::orderBy('id','desc')->take(4)->get()
         ]);
     }
