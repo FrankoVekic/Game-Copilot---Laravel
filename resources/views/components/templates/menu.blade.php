@@ -41,7 +41,7 @@
         <div class="row">
           <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <!-- logo start -->
-            <div class="logo"> <a href="it_home.html"><img src="{{ env('APP_URL') }}public/images/logos/logo.png" alt="logo" style="size: 500px;" /></a> </div>
+            <div class="logo"> <a href="/"><img src="{{ env('APP_URL') }}public/images/logos/logo.png" alt="logo" style="size: 500px;" /></a> </div>
             <!-- logo end -->
           </div>
           <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
@@ -54,7 +54,7 @@
                   <li><a href="{{ env('APP_URL') }}news/index">News</a></li>
                   <li> <a href="{{ env('APP_URL') }}blogs/index">Blog</a>
                   </li>
-                  <li> <a href="#">Service</a>
+                  <li> <a href="{{ env('APP_URL') }}services/index">Service</a>
                   </li>
                   <li> <a href="">Shop</a>
                     <ul>

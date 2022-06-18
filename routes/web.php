@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\BlogsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,9 @@ Route::get('/about-us',[HomeController::class,'about']);
 
 // Show All Blogs
 Route::get('/blogs/index',[BlogsController::class,'index']);
+
+// Show All Services
+Route::get('/services/index',[ServiceController::class,'index']);
 
 // Show Single Blog
 Route::get('/blogs/{blog}',[BlogsController::class,'show']);
