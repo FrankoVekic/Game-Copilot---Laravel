@@ -21,17 +21,16 @@
   <div class="section padding_layout_1 service_list">
     <div class="container">
       <div class="row">
-        <div class="col-md-9">
           <div class="row">
             {{-- UNLESS SERVICE IS NULL --}}
-            {{-- FOREACH SERVICE --}}
-                <x-services.index/>
-              {{-- END FOREACH --}}
+            @foreach ($services as $service)
+                <x-services.service-card :service="$service"/>
+            @endforeach
           </div>
-          {{-- PAGINATION --}}
-          {{-- ELSE  --}}
+          <div class="center">
+            {{ $services->links() }}
           </div>
-          {{-- END IF --}}
+          {{-- END UNLESS --}}
         </div>
         {{-- SIDE BAR --}}
       </div>
