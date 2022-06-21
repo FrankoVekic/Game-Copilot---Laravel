@@ -15,4 +15,13 @@ class ServiceController extends Controller
             (request(['search']))->paginate(6)
         ]);
     }
+
+    public function show(Service $service)
+    {
+        return view('services.service-detail',[
+            'service'=> $service,
+            'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
+            'sideServices'=>Service::latest()->take(5)->get()
+        ]);
+    }
 }

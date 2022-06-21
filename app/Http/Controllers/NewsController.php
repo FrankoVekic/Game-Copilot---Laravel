@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -12,7 +13,8 @@ class NewsController extends Controller
         return view('news.index',[
             'allNews'=>News::orderBy('id','desc')->filter
             (request(['search']))->paginate(4),
-            'sideNews'=>News::orderBy('id','desc')->take(4)->get()
+            'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
+            'sideServices'=>Service::latest()->take(5)->get()
         ]);
     }
 
@@ -20,7 +22,8 @@ class NewsController extends Controller
     {
         return view('news.news-detail',[
             'news'=>$news,
-            'sideNews'=>News::orderBy('id','desc')->take(4)->get()
+            'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
+            'sideServices'=>Service::latest()->take(5)->get()
         ]);
     }
 }

@@ -42,7 +42,7 @@
           <div class="side_bar">
           <x-sidebar.search :slug="$slug"/>
           <x-sidebar.news :news="$sideNews"/>
-          <x-sidebar.services/>
+          <x-sidebar.services :service="$sideServices"/>
           </div>
         </div>
       </div>

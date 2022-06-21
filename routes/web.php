@@ -63,6 +63,9 @@ Route::get('/blogs/index',[BlogsController::class,'index']);
 // Show All Services
 Route::get('/services/index',[ServiceController::class,'index']);
 
+// Show Single Service
+Route::get('/services/{service}',[ServiceController::class,'show']);
+
 // Show Single Blog
 Route::get('/blogs/{blog}',[BlogsController::class,'show']);
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use App\Models\Product;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,7 +14,8 @@ class ProductController extends Controller
         return view('products.equipment',[
             'products'=>Product::where('slug','like','eq%')->filter(request(['search']))->paginate($perPage = 12),
             'slug'=>'equipment',
-            'sideNews'=>News::orderBy('id','desc')->take(4)->get()
+            'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
+            'sideServices'=>Service::latest()->take(5)->get()
         ]);
     }
 
@@ -22,7 +24,8 @@ class ProductController extends Controller
         return view('products.games',[
             'products'=>Product::where('slug','like','ga%')->filter(request(['search']))->paginate($perPage = 12),
             'slug'=>'games',
-            'sideNews'=>News::orderBy('id','desc')->take(4)->get()
+            'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
+            'sideServices'=>Service::latest()->take(5)->get()
         ]);
     }
 
@@ -39,7 +42,8 @@ class ProductController extends Controller
                     'product'=> $product,
                     'related'=> $related,
                     'slug'=>'games',
-                    'sideNews'=>News::orderBy('id','desc')->take(4)->get()
+                    'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
+                    'sideServices'=>Service::latest()->take(5)->get()
                 ]);  
             }
             else {
@@ -52,7 +56,8 @@ class ProductController extends Controller
                     'product'=> $product,
                     'related'=> $related,
                     'slug'=>'equipment',
-                    'sideNews'=>News::orderBy('id','desc')->take(4)->get()
+                    'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
+                    'sideServices'=>Service::latest()->take(5)->get()
                 ]);  
             }
         }
