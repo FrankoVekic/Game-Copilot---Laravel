@@ -35,7 +35,9 @@ class ProductController extends Controller
         if($product){
             if(request()->product->slug != 'equipment'){
                 $related = Product::select("*")
-                ->where("slug", "like", "ga%")->take(3)->inRandomOrder()
+                ->where("slug", "like", "ga%")
+                ->where('id','!=', $product->id)
+                ->take(3)->inRandomOrder()
                 ->get();
     
                 return view('products.product-detail',[
@@ -49,7 +51,9 @@ class ProductController extends Controller
             else {
                 
                 $related = Product::select("*")
-                ->where("slug", "like", "eq%")->take(3)->inRandomOrder()
+                ->where("slug", "like", "eq%")
+                ->where('id','!=', $product->id)
+                ->take(3)->inRandomOrder()
                 ->get();
     
                 return view('products.product-detail',[

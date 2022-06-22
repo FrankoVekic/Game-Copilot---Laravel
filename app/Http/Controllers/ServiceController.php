@@ -21,7 +21,8 @@ class ServiceController extends Controller
         return view('services.service-detail',[
             'service'=> $service,
             'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
-            'sideServices'=>Service::latest()->take(5)->get()
+            'sideServices'=>Service::latest()->take(5)->get(),
+            'moreServices'=>Service::inRandomOrder()->where('id','!=',$service->id)->take(2)->get()
         ]);
     }
 }

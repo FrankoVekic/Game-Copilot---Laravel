@@ -24,42 +24,8 @@
           <div class="row">
             <div class="col-md-9">
               <div class="row">
-                <div class="col-md-12 service_blog margin_bottom_50">
-                  <div class="full">
-                    <div class="service_img"> <img class="img-responsive" src="{{ $service->image ? asset('public/images/services/' . $service->image) : asset('public/images/shop/noimg.png') }}" alt="#" /> </div>
-                    <div class="service_cont">
-                      <h3 class="service_head"> {{ $service->title }}</h3>
-                      <p> {{ $service->description }}</p>
-                      <div class="bt_cont"> <a class="btn sqaure_bt" href="">Contact us</a> </div>
-                    </div>
-                    <hr>
-                  </div>
-                </div>
-                <div class="row">
-                <div class="col-md-12">
-                  <div class="full">
-                    <div class="main_heading text_align_left" style="margin-bottom: 35px;">
-                      <h2>More Services</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                {{-- IF MORE SERVICES IS NOT NULL --}}
-                {{-- FOREACH NEW SERVICE --}}
-                <div class="col-md-6 service_blog margin_bottom_50">
-                  <div class="full">
-                    <div class="service_img"> <img class="img-responsive" src="{{ $service->image ? asset('public/images/services/' . $service->image) : asset('public/images/shop/noimg.png') }}" alt="#" /> </div>
-                    <div class="service_cont">
-                      <h3 class="service_head">Service title</h3>
-                      <p>Small desc</p>
-                      <div class="bt_cont"> <a class="btn sqaure_bt" href="">View Service</a> </div>
-                    </div>
-                  </div>
-                </div>
-                {{-- END FOREACH --}}
-                {{-- END IF --}}
-            </div>
+                <x-services.service-detail :service="$service"/>
+                <x-services.more-service :service="$moreServices"/>
               </div>
               <div class="row" style="margin-bottom: 30px;">
                 <div class="col-md-12">
