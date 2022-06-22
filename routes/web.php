@@ -25,7 +25,7 @@ use App\Http\Controllers\ServiceController;
 Route::get('/',[HomeController::class,'index']);
 
 // Show Login Form
-Route::get('/login',[UserController::class,'login']);
+Route::get('/login',[UserController::class,'login'])->name('login');
 
 // Show Register Form
 Route::get('/register',[UserController::class,'create']);
