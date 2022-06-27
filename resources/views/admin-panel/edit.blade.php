@@ -6,10 +6,11 @@
           <div class="full">
             <div class="title-holder">
               <div class="title-holder-cell text-left">
-                <h1 class="page-title">Manage Equipment</h1>
+                <h1 class="page-title">Edit Equipment</h1>
                 <ol class="breadcrumb">
                   <li><a href="">Home</a></li>
-                  <li class="active">Manage Equipment</li>
+                  <li><a href="">Manage Equipment</a></li>
+                  <li class="active">Edit Equipment</li>
                 </ol>
               </div>
             </div>
@@ -18,57 +19,65 @@
       </div>
     </div>
   </div>
-  <div class="section padding_layout_1 service_list">
+  <div class="section padding_layout_1 checkout_section">
     <div class="container">
       <div class="row">
-      <div class="side_bar_blog">
-          <h3 style="text-align:center;">FIND EQUIPMENT</h3>
-            <div class="side_bar_search">
-              <form action="">
-                <div class="input-group stylish-input-group">
-                    <input class="form-control" name="search" placeholder="Search" type="text">
-                    <span class="input-group-addon">
-                  <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                </span> </div>
+        <div class="col-sm-12">
+          <div class="full">
+            <div class="tab-info coupon-section">
+              <p>Message</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="checkout-form">
+            <form action="" method="POST" enctype="multipart/form-data">
+              <fieldset>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-field">
+                    <label>Title <span class="red"></span></label>
+                    <input class="inputcheckout" placeholder="Enter product title." name="name" value="{{ $product->title }}" type="text">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-field">
+                    <label>Price<span class="red"></span></label>
+                    <input class="inputcheckout" name="price" value="{{ $product->price }}" type="text">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-field">
+                    <label>Description <span class="red"></span></label>
+                    <input class="inputcheckout" value="{{ $product->description }}" placeholder="Enter product description." name="description"></input>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-field">
+                    <label>Quantity<span class="red"></span></label>
+                    <input class="inputcheckout" value="{{ $product->quantity }}" name="quantity" type="text">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-field">
+                    <label> Choose a image <span class="red"></span></label>
+                    <input class="inputcheckout" value="{{ $product->image }}" name="image" type="file">
+                  </div>
+                </div>
+                <div class="center">
+                <button class="btn main_bt" type="submit">Save changes</button>
+                <a href="" style="margin-left:10px; background-color:firebrick" class="btn main_bt" type="submit">Back</a>
+              </div>
+              </div>
+              </fieldset>
             </form>
           </div>
-      </div>
-        <div class="center" style="margin-bottom:25px;">
-          <a href="{{ env('APP_URL') }}admin-panel/new_equipment" class="btn main_bt" type="submit">Add New</a>
-      </div>
-      <div class="container">
-      <div class="row">
-      <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Image</th>
-        <th scope="col">Product Name</th>
-        <th scope="col">Product Price</th>
-        <th scope="col">Description</th>
-        <th scope="col">Product Quantity</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-        @unless($equipmentAll == null)
-        @foreach ($equipmentAll as $equipment)
-        <x-manage.equipment.equipment-table :equipment="$equipment"/>
-            @endforeach
-         @else
-        <tr>
-        <th>No Equipment In The Shop.</th>
-        </tr>
-            @endunless
-      </tbody>
-      </table>
-      <div class="center">
-        {{ $equipmentAll->links() }}
-      </div>
+        </div>
+      <!-- SIDE BAR HERE -->
       </div>
     </div>
-  </div>
-      </div>
-  </div>
   </div>
   <div class="section padding_layout_1 testmonial_section white_fonts">
     <div class="container">

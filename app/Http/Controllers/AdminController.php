@@ -15,4 +15,11 @@ class AdminController extends Controller
         ]);
     }
 
+    public function edit(Product $product)
+    {
+        return view('admin-panel.edit',[
+            'product'=> $product
+        ]);
+    }
+
 }
