@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
@@ -62,6 +63,9 @@ Route::get('/blogs/index',[BlogsController::class,'index']);
 
 // Show All Services
 Route::get('/services/index',[ServiceController::class,'index']);
+
+// Show All Equipment - Admin Panel
+Route::get('/admin-panel/equipment',[AdminController::class,'equipment']);
 
 // Show Single Service
 Route::get('/services/{service}',[ServiceController::class,'show']);

@@ -70,6 +70,15 @@
                   <li> <a href="{{ env('APP_URL') }}about-us">About Us</a>
                   </li>
                   @auth
+                  @unless (auth()->user()->role == 0)
+                  <li> <a href="">Admin Panel</a>
+                    <ul>
+                      <li><a href="{{ env('APP_URL') }}admin-panel/equipment">Manage Equipment</a></li>
+                      <li><a href="{{ env('APP_URL') }}admin-panel/games">Manage Games</a></li>
+                      <li><a href="{{ env('APP_URL') }}admin-panel/services">Manage Services</a></li>
+                    </ul>
+                  </li>
+                  @endunless
                   <li> <a href="{{ env('APP_URL') }}logout">Log Out</a>
                   </li>
                   @else
