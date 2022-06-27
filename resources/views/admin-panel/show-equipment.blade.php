@@ -50,11 +50,19 @@
       </tr>
     </thead>
     <tbody>
+        @unless($equipmentAll == null)
+        @foreach ($equipmentAll as $equipment)
         <x-manage.equipment.equipment-table :equipment="$equipment"/>
+        @endforeach
+         @else
+        <tr>
+        <th>No Equipment In The Shop.</th>
+        </tr>
+    @endunless
       </tbody>
       </table>
       <div class="center">
-        {{ $equipment->links() }}
+        {{ $equipmentAll->links() }}
       </div>
       </div>
     </div>
