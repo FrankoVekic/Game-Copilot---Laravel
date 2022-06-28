@@ -8,7 +8,7 @@
               <div class="title-holder-cell text-left">
                 <h1 class="page-title">Manage Equipment</h1>
                 <ol class="breadcrumb">
-                  <li><a href="">Home</a></li>
+                  <li><a href="/">Home</a></li>
                   <li class="active">Manage Equipment</li>
                 </ol>
               </div>

@@ -67,6 +67,9 @@ Route::get('/services/index',[ServiceController::class,'index']);
 // Show All Equipment - Admin Panel
 Route::get('/admin-panel/equipment',[AdminController::class,'equipment']);
 
+// Show Create Equipment Form
+Route::get('/admin-panel/new_equipment',[AdminController::class,'new_equipment']);
+
 // Show Edit Form for Products
 Route::get('/admin-panel/{product}/edit',[AdminController::class,'edit']);
 

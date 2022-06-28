@@ -22,4 +22,9 @@ class AdminController extends Controller
         ]);
     }
 
+
+    public function new_equipment()
+    {
+        return view('admin-panel.create');
+    }
 }

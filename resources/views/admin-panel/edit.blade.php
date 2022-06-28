@@ -8,8 +8,8 @@
               <div class="title-holder-cell text-left">
                 <h1 class="page-title">Edit Equipment</h1>
                 <ol class="breadcrumb">
-                  <li><a href="">Home</a></li>
-                  <li><a href="">Manage Equipment</a></li>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="{{ env('APP_URL') }}admin-panel/equipment">Manage Equipment</a></li>
                   <li class="active">Edit Equipment</li>
                 </ol>
               </div>
