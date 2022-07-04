@@ -37,6 +37,14 @@ class AdminController extends Controller
             'description'=>'required'
         ]);
 
+        $equipment = new Product();
+        $equipment->title = $request->title;
+        $equipment->price = $request->price;
+        $equipment->quantity = $request->quantity;
+        $equipment->slug = 'equipment';
+        $equipment->description = $request->description;
+        $equipment->save();
+
         return redirect(env('APP_URL').'admin-panel/equipment');
     }
 }
