@@ -23,8 +23,20 @@ class AdminController extends Controller
     }
 
 
-    public function new_equipment()
+    public function create_equipment()
     {
         return view('admin-panel.create');
+    }
+
+    public function store_equipment(Request $request)
+    {   
+        $data = $request->validate([
+            'title'=>['required','min:3','max:200'],
+            'price'=>['required','numeric','gt:0'],
+            'quantity'=>['required','min:1'],
+            'description'=>'required'
+        ]);
+
+        return redirect(env('APP_URL').'admin-panel/equipment');
     }
 }

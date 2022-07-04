@@ -6,11 +6,11 @@
               <div class="full">
                 <div class="title-holder">
                   <div class="title-holder-cell text-left">
-                    <h1 class="page-title">New Product</h1>
+                    <h1 class="page-title">New Equipment</h1>
                     <ol class="breadcrumb">
                       <li><a href="/">Home</a></li>
                       <li><a href="{{ env('APP_URL') }}admin-panel/equipment">Manage Equipment</a></li>
-                      <li class="active">Edit Equipment</li>
+                      <li class="active">Create Equipment</li>
                     </ol>
                   </div>
                 </div>
@@ -25,7 +25,7 @@
             <div class="col-sm-12">
               <div class="full">
                 <div class="tab-info coupon-section">
-                  <p>Message</p>
+                  <p>Enter required data.</p>
                 </div>
               </div>
             </div>
@@ -33,7 +33,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="checkout-form">
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form action="{{ env('APP_URL') }}admin-panel/store_equipment" method="POST" enctype="multipart/form-data">
                     @csrf
                   <fieldset>
                   <div class="row">
@@ -45,6 +45,9 @@
                             placeholder="Enter Product Title." 
                             name="title" 
                             type="text">
+                            @error('title')
+                        <p style="color: red; font-size:14px;">{{ $message }}</p>
+                        @enderror
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -55,6 +58,9 @@
                             placeholder="Enter Product Price"
                             name="price"  
                             type="text">
+                            @error('price')
+                        <p style="color: red; font-size:14px;">{{ $message }}</p>
+                        @enderror
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -63,7 +69,11 @@
                         <textarea 
                         class="field_custom" 
                         placeholder="Enter Product Description" 
-                        required ></textarea>
+                        name="description"
+                        ></textarea>
+                        @error('description')
+                        <p style="color: red; font-size:14px;">{{ $message }}</p>
+                        @enderror
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -74,6 +84,9 @@
                             class="inputcheckout" 
                             name="quantity" 
                             type="text">
+                            @error('quantity')
+                        <p style="color: red; font-size:14px;">{{ $message }}</p>
+                        @enderror
                       </div>
                     </div>
                     <div class="col-md-6">

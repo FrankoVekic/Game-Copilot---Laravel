@@ -34,7 +34,7 @@
           </div>
       </div>
         <div class="center" style="margin-bottom:25px;">
-          <a href="{{ env('APP_URL') }}admin-panel/new_equipment" class="btn main_bt" type="submit">Add New</a>
+          <a href="{{ env('APP_URL') }}admin-panel/create_equipment" class="btn main_bt" type="submit">Add New</a>
       </div>
       <div class="container">
       <div class="row">

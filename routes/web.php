@@ -65,13 +65,16 @@ Route::get('/blogs/index',[BlogsController::class,'index']);
 Route::get('/services/index',[ServiceController::class,'index']);
 
 // Show All Equipment - Admin Panel
-Route::get('/admin-panel/equipment',[AdminController::class,'equipment']);
+Route::get('/admin-panel/equipment',[AdminController::class,'equipment'])->middleware(['admin']);
 
 // Show Create Equipment Form
-Route::get('/admin-panel/new_equipment',[AdminController::class,'new_equipment']);
+Route::get('/admin-panel/create_equipment',[AdminController::class,'create_equipment'])->middleware(['admin']);
 
 // Show Edit Form for Products
-Route::get('/admin-panel/{product}/edit',[AdminController::class,'edit']);
+Route::get('/admin-panel/{product}/edit',[AdminController::class,'edit'])->middleware(['admin']);
+
+//Store Equipment 
+Route::post('/admin-panel/store_equipment',[AdminController::class,'store_equipment'])->middleware(['admin']);
 
 // Show Single Service
 Route::get('/services/{service}',[ServiceController::class,'show']);
