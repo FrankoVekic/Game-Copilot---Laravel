@@ -11,8 +11,9 @@ class ProductController extends Controller
 {
     public function equipment()
     {
+
         return view('products.equipment',[
-            'products'=>Product::where('slug','like','eq%')->filter(request(['search']))->paginate($perPage = 12),
+            'products'=>Product::where('slug','like','eq%')->filter(request(['search']))->paginate($perPage = 12)->appends(request()->query()),
             'slug'=>'equipment',
             'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
             'sideServices'=>Service::latest()->take(5)->get()
@@ -22,7 +23,7 @@ class ProductController extends Controller
     public function games(Request $request)
     {
         return view('products.games',[
-            'products'=>Product::where('slug','like','ga%')->filter(request(['search']))->paginate($perPage = 12),
+            'products'=>Product::where('slug','like','ga%')->filter(request(['search']))->paginate($perPage = 12)->appends(request()->query()),
             'slug'=>'games',
             'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
             'sideServices'=>Service::latest()->take(5)->get()

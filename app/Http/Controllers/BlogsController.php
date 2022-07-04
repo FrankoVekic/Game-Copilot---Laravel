@@ -13,7 +13,7 @@ class BlogsController extends Controller
     {
         return view('blogs.index',[
             'blogs'=>Blog::orderBy('id','desc')->filter
-            (request(['search']))->paginate(4),
+            (request(['search']))->paginate(4)->appends(request()->query()),
             'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
             'sideServices'=>Service::latest()->take(5)->get()
         ]);

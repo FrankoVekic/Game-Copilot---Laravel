@@ -12,7 +12,7 @@ class NewsController extends Controller
     {
         return view('news.index',[
             'allNews'=>News::orderBy('id','desc')->filter
-            (request(['search']))->paginate(4),
+            (request(['search']))->paginate(4)->appends(request()->query()),
             'sideNews'=>News::orderBy('id','desc')->take(4)->get(),
             'sideServices'=>Service::latest()->take(5)->get()
         ]);
