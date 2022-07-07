@@ -62,4 +62,10 @@ class AdminController extends Controller
         return redirect(env('APP_URL').'admin-panel/equipment');
 
     }
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+        return back();
+    }
 }

@@ -79,6 +79,9 @@ Route::post('/admin-panel/store_equipment',[AdminController::class,'store_equipm
 //Update Product
 Route::put('/admin-panel/{product}',[AdminController::class,'update'])->middleware('admin');
 
+//Delete Product
+Route::delete('/admin-panel/{product}',[AdminController::class,'destroy'])->middleware('admin');
+
 // Show Single Service
 Route::get('/services/{service}',[ServiceController::class,'show']);
 
