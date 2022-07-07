@@ -6,11 +6,11 @@
           <div class="full">
             <div class="title-holder">
               <div class="title-holder-cell text-left">
-                <h1 class="page-title">Edit Equipment</h1>
+                <h1 class="page-title">Edit Product</h1>
                 <ol class="breadcrumb">
                   <li><a href="/">Home</a></li>
                   <li><a href="{{ env('APP_URL') }}admin-panel/equipment">Manage Equipment</a></li>
-                  <li class="active">Edit Equipment</li>
+                  <li class="active">Edit Product</li>
                 </ol>
               </div>
             </div>
@@ -25,7 +25,7 @@
         <div class="col-sm-12">
           <div class="full">
             <div class="tab-info coupon-section">
-              <p>Message</p>
+              <p>Enter required data.</p>
             </div>
           </div>
         </div>
@@ -33,31 +33,45 @@
       <div class="row">
         <div class="col-md-12">
           <div class="checkout-form">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form method="POST" action="{{ env('APP_URL') }}admin-panel/{{ $product->id }}" enctype="multipart/form-data">
+              @csrf
+              @method('PUT')
               <fieldset>
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-field">
                     <label>Title <span class="red"></span></label>
-                    <input class="inputcheckout" placeholder="Enter product title." name="name" value="{{ $product->title }}" type="text">
+                    <input class="inputcheckout" placeholder="Enter product title." name="title" value="{{ $product->title }}" type="text">
+                    @error('title')
+                    <p style="color: red; font-size:14px;">{{ $message }}</p>
+                    @enderror
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-field">
                     <label>Price<span class="red"></span></label>
                     <input class="inputcheckout" name="price" value="{{ $product->price }}" type="text">
+                    @error('price')
+                    <p style="color: red; font-size:14px;">{{ $message }}</p>
+                    @enderror
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-field">
                     <label>Description <span class="red"></span></label>
-                    <input class="inputcheckout" value="{{ $product->description }}" placeholder="Enter product description." name="description"></input>
+                    <input class="inputcheckout" value="{{ $product->description }}" placeholder="Enter product description." name="description">
+                    @error('description')
+                    <p style="color: red; font-size:14px;">{{ $message }}</p>
+                    @enderror
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-field">
                     <label>Quantity<span class="red"></span></label>
                     <input class="inputcheckout" value="{{ $product->quantity }}" name="quantity" type="text">
+                    @error('quantity')
+                    <p style="color: red; font-size:14px;">{{ $message }}</p>
+                    @enderror
                   </div>
                 </div>
                 <div class="col-md-6">

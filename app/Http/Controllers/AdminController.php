@@ -30,7 +30,7 @@ class AdminController extends Controller
 
     public function store_equipment(Request $request)
     {   
-        $data = $request->validate([
+        $request->validate([
             'title'=>['required','min:3','max:200'],
             'price'=>['required','numeric','gt:0'],
             'quantity'=>['required','min:1'],
@@ -46,5 +46,20 @@ class AdminController extends Controller
         $equipment->save();
 
         return redirect(env('APP_URL').'admin-panel/equipment');
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $data = $request->validate([
+            'title'=>['required','min:3','max:200'],
+            'price'=>['required','numeric','gt:0'],
+            'quantity'=>['required','min:1'],
+            'description'=>'required'
+        ]);
+
+        $product->update($data);
+
+        return redirect(env('APP_URL').'admin-panel/equipment');
+
     }
 }

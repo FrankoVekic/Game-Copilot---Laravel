@@ -76,6 +76,9 @@ Route::get('/admin-panel/{product}/edit',[AdminController::class,'edit'])->middl
 //Store Equipment 
 Route::post('/admin-panel/store_equipment',[AdminController::class,'store_equipment'])->middleware(['admin']);
 
+//Update Product
+Route::put('/admin-panel/{product}',[AdminController::class,'update'])->middleware('admin');
+
 // Show Single Service
 Route::get('/services/{service}',[ServiceController::class,'show']);
 
