@@ -67,6 +67,9 @@ Route::get('/services/index',[ServiceController::class,'index']);
 // Show All Equipment - Admin Panel
 Route::get('/admin-panel/equipment',[AdminController::class,'equipment'])->middleware(['admin']);
 
+// Show All Games - Admin Panel
+Route::get('/admin-panel/games',[AdminController::class,'games'])->middleware('admin');
+
 // Show Create Equipment Form
 Route::get('/admin-panel/create_equipment',[AdminController::class,'create_equipment'])->middleware(['admin']);
 
