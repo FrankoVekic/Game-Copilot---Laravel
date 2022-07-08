@@ -1,9 +1,7 @@
 @props(['games'])
-@if($games != null && count($games) >=3)
 <div class="center">
   <a href="" class="btn main_bt" type="submit">Add New</a>
 </div>
-@endif
 <div class="container">
 <div class="row">
 @if($games != null)
@@ -19,7 +17,7 @@
   </div>
 </div>
 @endforeach
-@if(count($games)<=2)
+@else 
 <div class="col-md-4 service_blog margin_bottom_50">
   <div class="full">
     <div class="service_img"> <img class="img-responsive" src="/public/images/shop/new.jpg" alt="#" /> </div>
@@ -30,7 +28,6 @@
     </div>
   </div>
 </div>
-@endif
 </div>
 @endif
 </div>

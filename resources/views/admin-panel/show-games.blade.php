@@ -26,7 +26,7 @@
           <div class="side_bar_search">
             <form action="">
               <div class="input-group stylish-input-group">
-                  <input class="form-control" name="search" value="" placeholder="Search" type="text">
+                  <input class="form-control" name="search" placeholder="Search" type="text">
                   <span class="input-group-addon">
                 <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
               </span> </div>
@@ -37,11 +37,8 @@
     <div class="center">
         {{ $games->links() }}
       </div>
-</div>
-
+        </div>
     </div>
-
 </div>
 </div>
-
 </x-app>
