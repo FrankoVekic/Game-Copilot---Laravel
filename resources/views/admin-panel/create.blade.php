@@ -6,11 +6,11 @@
               <div class="full">
                 <div class="title-holder">
                   <div class="title-holder-cell text-left">
-                    <h1 class="page-title">New Equipment</h1>
+                    <h1 class="page-title">New Product</h1>
                     <ol class="breadcrumb">
                       <li><a href="/">Home</a></li>
-                      <li><a href="{{ env('APP_URL') }}admin-panel/equipment">Manage Equipment</a></li>
-                      <li class="active">Create Equipment</li>
+                      <li><a href="{{ env('APP_URL') }}admin-panel/equipment">Manage Product</a></li>
+                      <li class="active">Create Product</li>
                     </ol>
                   </div>
                 </div>
@@ -33,7 +33,13 @@
           <div class="row">
             <div class="col-md-12">
               <div class="checkout-form">
-                <form action="{{ env('APP_URL') }}admin-panel/store_equipment" method="POST" enctype="multipart/form-data">
+                <form
+                @if (Request::url() == 'http://myapp.hr/admin-panel/create_game')
+                  action="{{ env('APP_URL') }}admin-panel/store_game"
+                @else
+                action="{{ env('APP_URL') }}admin-panel/store_equipment"
+                @endif        
+                 method="POST" enctype="multipart/form-data">
                     @csrf
                   <fieldset>
                   <div class="row">

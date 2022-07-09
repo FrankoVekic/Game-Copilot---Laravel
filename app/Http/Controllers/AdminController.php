@@ -25,6 +25,10 @@ class AdminController extends Controller
         ]);
     }
 
+    public function create_game()
+    {
+        return view('admin-panel.create');
+    }
 
     public function create_equipment()
     {
@@ -49,6 +53,26 @@ class AdminController extends Controller
         $equipment->save();
 
         return redirect(env('APP_URL').'admin-panel/equipment');
+    }
+
+    public function store_game(Request $request)
+    {   
+        $request->validate([
+            'title'=>['required','min:3','max:200'],
+            'price'=>['required','numeric','gt:0'],
+            'quantity'=>['required','min:1'],
+            'description'=>'required'
+        ]);
+
+        $game = new Product();
+        $game->title = $request->title;
+        $game->price = $request->price;
+        $game->quantity = $request->quantity;
+        $game->slug = 'game';
+        $game->description = $request->description;
+        $game->save();
+
+        return redirect(env('APP_URL').'admin-panel/games');
     }
 
     public function update(Request $request, Product $product)

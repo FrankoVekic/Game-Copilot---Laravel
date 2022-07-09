@@ -73,11 +73,17 @@ Route::get('/admin-panel/games',[AdminController::class,'games'])->middleware('a
 // Show Create Equipment Form
 Route::get('/admin-panel/create_equipment',[AdminController::class,'create_equipment'])->middleware(['admin']);
 
+// Show Create Equipment Form
+Route::get('/admin-panel/create_game',[AdminController::class,'create_game'])->middleware(['admin']);
+
 // Show Edit Form for Products
 Route::get('/admin-panel/{product}/edit',[AdminController::class,'edit'])->middleware(['admin']);
 
 //Store Equipment 
 Route::post('/admin-panel/store_equipment',[AdminController::class,'store_equipment'])->middleware(['admin']);
+
+//Store Game 
+Route::post('/admin-panel/store_game',[AdminController::class,'store_game'])->middleware(['admin']);
 
 //Update Product
 Route::put('/admin-panel/{product}',[AdminController::class,'update'])->middleware('admin');

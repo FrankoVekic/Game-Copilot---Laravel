@@ -1,6 +1,6 @@
 @props(['games'])
 <div class="center">
-  <a href="" class="btn main_bt" type="submit">Add New</a>
+  <a href="{{ env('APP_URL') }}admin-panel/create_game" class="btn main_bt" type="submit">Add New</a>
 </div>
 <div class="container">
 <div class="row">
@@ -12,7 +12,7 @@
     <div class="service_cont">
       <h3 class="service_head"><?=$game->title?></h3>
       <p><?=$game->description?></p>
-      <div class="bt_cont"> <a style="margin-right:5px;" class="btn sqaure_bt" href="">Edit</a><a onclick="return confirm('Are you sure you want to delete &#34;<?=$game->title?>&#34; from the store?');" class="btn sqaure_bt" style="background-color:indianred" href="">Delete</a> </div>
+      <div class="bt_cont"> <a style="margin-right:5px;" class="btn sqaure_bt" href="{{ env('APP_URL') }}admin-panel/{{ $game->id }}/edit">Edit</a><a onclick="return confirm('Are you sure you want to delete &#34;<?=$game->title?>&#34; from the store?');" class="btn sqaure_bt" style="background-color:indianred" href="">Delete</a> </div>
     </div>
   </div>
 </div>
