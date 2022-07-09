@@ -86,8 +86,14 @@ class AdminController extends Controller
 
         $product->update($data);
 
-        return redirect(env('APP_URL').'admin-panel/equipment');
+        if($product->slug == 'game')
+        {
+            return redirect(env('APP_URL').'admin-panel/games');
 
+        }else {
+
+            return redirect(env('APP_URL').'admin-panel/equipment');
+        }
     }
 
     public function destroy(Product $product)
