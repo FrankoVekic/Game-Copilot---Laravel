@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -108,6 +109,16 @@ class AdminController extends Controller
             'games'=>Product::where('slug','like','ga%')
             ->filter(request(['search']))
             ->paginate($perPage = 9)
+            ->appends(request()->query())
+        ]);
+    }
+
+    public function services()
+    {
+        return view('admin-panel.show-services',[
+            'service'=>Service::latest()
+            ->filter(request(['search']))
+            ->paginate($perPage = 6)
             ->appends(request()->query())
         ]);
     }

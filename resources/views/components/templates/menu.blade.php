@@ -75,7 +75,7 @@
                     <ul>
                       <li><a href="{{ env('APP_URL') }}admin-panel/equipment">Manage Equipment</a></li>
                       <li><a href="{{ env('APP_URL') }}admin-panel/games">Manage Games</a></li>
-                      <li><a href="{{ env('APP_URL') }}admin-panel/services">Manage Services</a></li>
+                      <li><a href="{{ env('APP_URL') }}admin-panel/service">Manage Services</a></li>
                     </ul>
                   </li>
                   @endunless

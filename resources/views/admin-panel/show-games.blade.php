@@ -25,6 +25,7 @@
         <h3 style="text-align:center;">FIND GAME</h3>
           <div class="side_bar_search">
             <form action="">
+              @csrf
               <div class="input-group stylish-input-group">
                   <input class="form-control" name="search" placeholder="Search" type="text">
                   <span class="input-group-addon">

@@ -70,6 +70,9 @@ Route::get('/admin-panel/equipment',[AdminController::class,'equipment'])->middl
 // Show All Games - Admin Panel
 Route::get('/admin-panel/games',[AdminController::class,'games'])->middleware('admin');
 
+// Show All Services - Admin Panel 
+Route::get('/admin-panel/service',[AdminController::class,'services'])->middleware('admin');
+
 // Show Create Equipment Form
 Route::get('/admin-panel/create_equipment',[AdminController::class,'create_equipment'])->middleware(['admin']);
 
