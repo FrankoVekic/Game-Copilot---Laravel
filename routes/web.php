@@ -106,6 +106,11 @@ Route::get('/news/{news}',[NewsController::class,'show']);
 // Show Single Product
 Route::get('/products/{product}',[ProductController::class,'show']);
 
+// Error Page
+Route::fallback(function(){
+    return view('404');
+});
+
 Auth::routes([
     'register' => false,
     'reset' => false,
