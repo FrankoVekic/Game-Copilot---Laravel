@@ -8,7 +8,7 @@
                   <div class="title-holder-cell text-left">
                     <h1 class="page-title">Manage Services</h1>
                     <ol class="breadcrumb">
-                      <li><a href="">Home</a></li>
+                      <li><a href="/">Home</a></li>
                       <li class="active">Manage Services</li>
                     </ol>
                   </div>
@@ -35,7 +35,7 @@
               </div>
           </div>
             <div class="center">
-              <a href="" class="btn main_bt" type="submit">Add New</a>
+              <a href="{{ env('APP_URL') }}admin-panel/create_service" class="btn main_bt" type="submit">Add New</a>
           </div>
           <div class="container">
           <div class="row">

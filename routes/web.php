@@ -76,8 +76,11 @@ Route::get('/admin-panel/service',[AdminController::class,'services'])->middlewa
 // Show Create Equipment Form
 Route::get('/admin-panel/create_equipment',[AdminController::class,'create_equipment'])->middleware(['admin']);
 
-// Show Create Equipment Form
+// Show Create Game Form
 Route::get('/admin-panel/create_game',[AdminController::class,'create_game'])->middleware(['admin']);
+
+// Show Create Service Form
+Route::get('/admin-panel/create_service',[AdminController::class,'create_service'])->middleware('admin');
 
 // Show Edit Form for Products
 Route::get('/admin-panel/{product}/edit',[AdminController::class,'edit'])->middleware(['admin']);
@@ -87,6 +90,9 @@ Route::post('/admin-panel/store_equipment',[AdminController::class,'store_equipm
 
 //Store Game 
 Route::post('/admin-panel/store_game',[AdminController::class,'store_game'])->middleware(['admin']);
+
+// Store Service 
+Route::post('/admin-panel/store_service',[AdminController::class,'store_service'])->middleware('admin');
 
 //Update Product
 Route::put('/admin-panel/{product}',[AdminController::class,'update'])->middleware('admin');

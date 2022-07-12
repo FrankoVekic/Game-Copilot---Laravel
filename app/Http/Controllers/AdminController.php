@@ -122,4 +122,21 @@ class AdminController extends Controller
             ->appends(request()->query())
         ]);
     }
+
+    public function create_service()
+    {
+        return view('admin-panel.create-service');
+    }
+
+    public function store_service(Request $request)
+    {
+       $data = $request->validate([
+            'title'=>['required','min:3','max:200'],
+            'description'=>['required','min:3','max:10000']
+        ]);
+
+        Service::create($data);
+
+        return redirect(env('APP_URL').'admin-panel/service');
+    }
 }

@@ -9,6 +9,8 @@ class Service extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title','description','image'];
+
     public function scopeFilter($query, array $filters)
     {
       if($filters['search'] ?? false){
