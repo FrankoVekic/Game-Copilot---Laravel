@@ -6,7 +6,7 @@
     <td> <?=$equipment->description?></</td>
     <td class="center"> <?=$equipment->quantity?></</td>
     <td> <div class="bt_cont"> <a style="margin-right:5px;" 
-        class="btn sqaure_bt" href="{{ env('APP_URL') }}admin-panel/{{ $equipment->id }}/edit">Edit</a>
+        class="btn sqaure_bt" href="{{ env('APP_URL') }}admin-panel/product/{{ $equipment->id }}/edit">Edit</a>
         <form action="{{ env('APP_URL') }}admin-panel/product/{{ $equipment->id }}" method="POST">
           @csrf
           @method('DELETE')

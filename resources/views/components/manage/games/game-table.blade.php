@@ -15,7 +15,7 @@
       <div class="row"> <a 
             style="margin-right:5px;" 
             class="btn sqaure_bt" 
-            href="{{ env('APP_URL') }}admin-panel/{{ $game->id }}/edit">Edit
+            href="{{ env('APP_URL') }}admin-panel/product/{{ $game->id }}/edit">Edit
         </a>
         <form method="POST" action="{{ env('APP_URL') }}admin-panel/product/{{ $game->id }}">
           @csrf

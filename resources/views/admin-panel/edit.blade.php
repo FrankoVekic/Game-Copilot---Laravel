@@ -82,7 +82,7 @@
                 </div>
                 <div class="center">
                 <button class="btn main_bt" type="submit">Save changes</button>
-                <a href="{{ env('APP_URL') }}admin-panel/equipment" style="margin-left:10px; background-color:firebrick" class="btn main_bt" type="submit">Back</a>
+                <a href="{{ url()->previous() }}" style="margin-left:10px; background-color:firebrick" class="btn main_bt" type="submit">Back</a>
               </div>
               </div>
               </fieldset>

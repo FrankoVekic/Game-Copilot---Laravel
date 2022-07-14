@@ -12,7 +12,7 @@
         class="btn sqaure_bt" 
         href="{{ env('APP_URL') }}admin-panel/service/{{ $ser->id }}/edit">Edit
     </a>
-    <form method="POST" action="{{ env('APP_URL') }}admin-panel/{{ $ser->id }}">
+    <form method="POST" action="{{ env('APP_URL') }}admin-panel/service/{{ $ser->id }}">
       @csrf
       @method('DELETE')
       <button 
