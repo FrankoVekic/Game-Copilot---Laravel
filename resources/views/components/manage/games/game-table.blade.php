@@ -17,7 +17,7 @@
             class="btn sqaure_bt" 
             href="{{ env('APP_URL') }}admin-panel/{{ $game->id }}/edit">Edit
         </a>
-        <form method="POST" action="{{ env('APP_URL') }}admin-panel/{{ $game->id }}">
+        <form method="POST" action="{{ env('APP_URL') }}admin-panel/product/{{ $game->id }}">
           @csrf
           @method('DELETE')
           <button 

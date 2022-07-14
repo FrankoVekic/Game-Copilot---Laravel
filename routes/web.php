@@ -71,7 +71,7 @@ Route::get('/admin-panel/equipment',[AdminController::class,'equipment'])->middl
 Route::get('/admin-panel/games',[AdminController::class,'games'])->middleware('admin');
 
 // Show All Services - Admin Panel 
-Route::get('/admin-panel/service',[AdminController::class,'services'])->middleware('admin');
+Route::get('/admin-panel/service',[ServiceController::class,'services'])->middleware('admin');
 
 // Show Create Equipment Form
 Route::get('/admin-panel/create_equipment',[AdminController::class,'create_equipment'])->middleware(['admin']);
@@ -80,25 +80,31 @@ Route::get('/admin-panel/create_equipment',[AdminController::class,'create_equip
 Route::get('/admin-panel/create_game',[AdminController::class,'create_game'])->middleware(['admin']);
 
 // Show Create Service Form
-Route::get('/admin-panel/create_service',[AdminController::class,'create_service'])->middleware('admin');
+Route::get('/admin-panel/create_service',[ServiceController::class,'create'])->middleware('admin');
 
 // Show Edit Form for Products
-Route::get('/admin-panel/{product}/edit',[AdminController::class,'edit'])->middleware(['admin']);
+Route::get('/admin-panel/product/{product}/edit',[AdminController::class,'edit'])->middleware(['admin']);
 
-//Store Equipment 
+// Show Edit Form for Products
+Route::get('/admin-panel/service/{service}/edit',[ServiceController::class,'edit'])->middleware(['admin']);
+
+// Store Equipment 
 Route::post('/admin-panel/store_equipment',[AdminController::class,'store_equipment'])->middleware(['admin']);
 
-//Store Game 
+// Store Game 
 Route::post('/admin-panel/store_game',[AdminController::class,'store_game'])->middleware(['admin']);
 
 // Store Service 
-Route::post('/admin-panel/store_service',[AdminController::class,'store_service'])->middleware('admin');
+Route::post('/admin-panel/store_service',[ServiceController::class,'store'])->middleware('admin');
 
-//Update Product
+// Update Product
 Route::put('/admin-panel/{product}',[AdminController::class,'update'])->middleware('admin');
 
-//Delete Product
-Route::delete('/admin-panel/{product}',[AdminController::class,'destroy'])->middleware('admin');
+// Delete Service
+Route::delete('/admin-panel/service/{service}',[ServiceController::class,'destroy'])->middleware('admin');
+
+// Delete Product
+Route::delete('/admin-panel/product/{product}',[AdminController::class,'destroy'])->middleware('admin');
 
 // Show Single Service
 Route::get('/services/{service}',[ServiceController::class,'show']);

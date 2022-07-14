@@ -7,7 +7,7 @@
     <td class="center"> <?=$equipment->quantity?></</td>
     <td> <div class="bt_cont"> <a style="margin-right:5px;" 
         class="btn sqaure_bt" href="{{ env('APP_URL') }}admin-panel/{{ $equipment->id }}/edit">Edit</a>
-        <form action="{{ env('APP_URL') }}admin-panel/{{ $equipment->id }}" method="POST">
+        <form action="{{ env('APP_URL') }}admin-panel/product/{{ $equipment->id }}" method="POST">
           @csrf
           @method('DELETE')
         <button onclick="return confirm('Are you sure you want to delete &#34;{{ $equipment->title }}&#34; from the store?');" 
