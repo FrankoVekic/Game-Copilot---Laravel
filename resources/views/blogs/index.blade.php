@@ -8,7 +8,7 @@
               <div class="title-holder-cell text-left">
                 <h1 class="page-title">Blog List</h1>
                 <ol class="breadcrumb">
-                  <li><a href="">Home</a></li>
+                  <li><a href="/">Home</a></li>
                   <li class="active">Blog List</li>
                 </ol>
               </div>
@@ -23,11 +23,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pull-right">
           <div class="full">
-            {{-- if user is logged in 
+            @auth
             <div class="center" style="margin-bottom: 20px;">
-              <a href="" class="btn main_bt" type="submit">Add New Blog</a>
+              <a href="{{ env('APP_URL') }}blogs/create" class="btn main_bt" type="submit">Create New Blog</a>
             </div>
-             endif --}}
+            @endauth
             {{-- unless blogs are null --}}
             {{-- start foreach --}}
             @foreach ($blogs as $blog )

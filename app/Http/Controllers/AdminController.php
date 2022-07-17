@@ -19,6 +19,17 @@ class AdminController extends Controller
         ]);
     }
 
+    
+    public function games()
+    {
+        return view('admin-panel.show-games',[
+            'games'=>Product::where('slug','like','ga%')
+            ->filter(request(['search']))
+            ->paginate($perPage = 9)
+            ->appends(request()->query())
+        ]);
+    }
+
     public function edit(Product $product)
     {
         return view('admin-panel.edit',[
@@ -101,16 +112,6 @@ class AdminController extends Controller
     {
         $product->delete();
         return back();
-    }
-
-    public function games()
-    {
-        return view('admin-panel.show-games',[
-            'games'=>Product::where('slug','like','ga%')
-            ->filter(request(['search']))
-            ->paginate($perPage = 9)
-            ->appends(request()->query())
-        ]);
     }
 
 }

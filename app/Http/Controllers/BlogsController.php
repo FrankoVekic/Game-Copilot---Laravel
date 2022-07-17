@@ -29,4 +29,9 @@ class BlogsController extends Controller
             'sideServices'=>Service::latest()->take(5)->get()
         ]);
     }
+
+    public function create()
+    {
+        return view('blogs.create');
+    }
 }

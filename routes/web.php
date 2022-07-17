@@ -64,6 +64,9 @@ Route::get('/blogs/index',[BlogsController::class,'index']);
 // Show All Services
 Route::get('/services/index',[ServiceController::class,'index']);
 
+// Show Create Blog Form
+Route::get('/blogs/create',[BlogsController::class,'create'])->middleware('auth');
+
 // Show All Equipment - Admin Panel
 Route::get('/admin-panel/equipment',[AdminController::class,'equipment'])->middleware(['admin']);
 
