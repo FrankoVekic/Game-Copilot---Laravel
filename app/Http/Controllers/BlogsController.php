@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\News;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class BlogsController extends Controller
 {
@@ -33,5 +34,21 @@ class BlogsController extends Controller
     public function create()
     {
         return view('blogs.create');
+    }
+
+    public function store(Request $request)
+    {
+       $data = $request->validate([
+            'title'=>['required','min:3','max:200',Rule::unique('blogs','title')],
+            'description'=>'required'
+        ]);
+
+        $data['user_id'] = auth()->id();
+
+        Blog::create($data);
+
+        return redirect(env('APP_URL') . 'blogs/index');
+
+
     }
 }

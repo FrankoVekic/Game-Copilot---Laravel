@@ -100,6 +100,9 @@ Route::post('/admin-panel/store_game',[AdminController::class,'store_game'])->mi
 // Store Service 
 Route::post('/admin-panel/store_service',[ServiceController::class,'store'])->middleware('admin');
 
+// Store Blog
+Route::post('/blogs/store',[BlogsController::class,'store'])->middleware('auth');
+
 // Update Product
 Route::put('/admin-panel/{product}',[AdminController::class,'update'])->middleware('admin');
 

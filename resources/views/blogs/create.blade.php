@@ -6,11 +6,11 @@
               <div class="full">
                 <div class="title-holder">
                   <div class="title-holder-cell text-left">
-                    <h1 class="page-title">Add New Blog</h1>
+                    <h1 class="page-title">Create New Blog</h1>
                     <ol class="breadcrumb">
                       <li><a href="/">Home</a></li>
                       <li><a href="">Blog</a></li>
-                      <li class="active">Add New Blog</li>
+                      <li class="active">Create New Blog</li>
                     </ol>
                   </div>
                 </div>
@@ -30,7 +30,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="checkout-form">
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form action="{{ env('APP_URL') }}blogs/store" method="POST" enctype="multipart/form-data">
                     @csrf
                   <fieldset>
                   <div class="row">
@@ -43,16 +43,21 @@
                     <div class="col-md-12">
                       <div class="form-field">
                         <label>Title <span class="red">*</span></label>
-                        <input class="inputcheckout" placeholder="Enter a title for your Blog." name="title" value="" type="text">
+                        <input class="inputcheckout" placeholder="Enter a title for your Blog." name="title" value="{{ old('title') }}" type="text">
+                        @error('title')
+                        <p style="color: red; font-size:14px;">{{ $message }}</p>
+                        @enderror
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-field">
                         <label>Blog text <span class="red">*</span></label>
-                        <input class="inputcheckout" value="" placeholder="Write your blog here" name="text">
+                        <input class="inputcheckout" value="{{ old('description') }}" placeholder="Write your blog here." name="description">
+                        @error('text')
+                        <p style="color: red; font-size:14px;">{{ $message }}</p>
+                        @enderror
                       </div>
                     </div>
-                    <input type="hidden" name="author" value="">
                     <div class="center">
                     <button class="btn main_bt" type="submit">Create</button>
                     <a href="{{ url()->previous() }}" style="margin-left:10px; background-color:firebrick" class="btn main_bt" type="submit">Back</a>

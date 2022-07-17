@@ -9,6 +9,8 @@ class Blog extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title','description','user_id','image'];
+
     public function scopeFilter($query, array $filters)
     {
       if($filters['search'] ?? false){
