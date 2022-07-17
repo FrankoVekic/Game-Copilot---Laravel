@@ -1,12 +1,12 @@
 @props(['blog'])
 <div class="blog_section" style="max-height:90%">    
     <div class="full testimonial_simple_say margin_bottom_30_all" style="margin-top:0;">
-    {{-- if is authorized as guest 
+    @unless (auth()->id() !== $blog->user_id)
       <div style="text-align:right;">
               <a style="margin-right:10px;" href=""><i style="color:#1E90FF; font-size:20px" class="fa fa-pencil" aria-hidden="true"></i></a>
-              <a onclick="return confirm('Are you sure you want to delete this blog?');" href=""><i style="color:#1E90FF; font-size:20px" class="fa fa-trash" aria-hidden="true"></i></a>
+              <a onclick="return confirm('Are you sure you want to delete this blog?');" href="{{ env('APP_URL') }}blogs/{{ $blog->id }}/delete"><i style="color:#1E90FF; font-size:20px" class="fa fa-trash" aria-hidden="true"></i></a>
             </div>
-     end if --}}
+        @endunless
         <p class="blog_head_index">{{ $blog->title }}</p>
         <p style="font-size:16px;"> {{ substr($blog->description,0,75) }}...</p>
         <div class="blog_feature_cantant">

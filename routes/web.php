@@ -112,6 +112,9 @@ Route::delete('/admin-panel/service/{service}',[ServiceController::class,'destro
 // Delete Product
 Route::delete('/admin-panel/product/{product}',[AdminController::class,'destroy'])->middleware('admin');
 
+// Delete Blog
+Route::get('/blogs/{blog}/delete',[BlogsController::class,'destroy'])->middleware('auth');
+
 // Show Single Service
 Route::get('/services/{service}',[ServiceController::class,'show']);
 

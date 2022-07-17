@@ -34,7 +34,9 @@
                 <x-blogs.blog-card :blog="$blog"/>
             @endforeach
             {{-- endforeach --}}
-            {{-- paging links here --}}
+            <div class="center">
+              {{ $blogs->links() }}
+              </div>
             {{-- else 
                 <div style="margin-left:20px;" class="bt_cont"> <a class="btn sqaure_bt" href="">Back</a> </div>
              endif --}}
@@ -48,9 +50,7 @@
           </div>
         </div>
       </div>
-      <div class="center">
-        {{ $blogs->links() }}
-        </div>
+
     </div>
   </div>
   <div class="section padding_layout_1 testmonial_section white_fonts">

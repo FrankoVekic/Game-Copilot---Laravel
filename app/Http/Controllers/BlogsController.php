@@ -49,6 +49,20 @@ class BlogsController extends Controller
 
         return redirect(env('APP_URL') . 'blogs/index');
 
+    }
+
+    public function destroy(Request $request, Blog $blog)
+    {
+
+        if($blog->user_id != auth()->id()){
+            abort(403,'Unauthorized Action');
+        }
+
+        $blogx = Blog::where('id',$blog->id);
+
+        $blogx->delete();
+
+       return redirect(env('APP_URL') . 'blogs/index');
 
     }
 }
