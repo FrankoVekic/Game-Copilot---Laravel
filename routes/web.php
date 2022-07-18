@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
 
@@ -102,6 +103,9 @@ Route::post('/admin-panel/store_service',[ServiceController::class,'store'])->mi
 
 // Store Blog
 Route::post('/blogs/store',[BlogsController::class,'store'])->middleware('auth');
+
+// Store Comment
+Route::post('/blogs/post',[CommentController::class,'store'])->middleware('auth');
 
 // Update Product
 Route::put('/admin-panel/{product}',[AdminController::class,'update'])->middleware('admin');

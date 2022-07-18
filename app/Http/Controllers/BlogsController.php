@@ -51,7 +51,7 @@ class BlogsController extends Controller
 
     }
 
-    public function destroy(Request $request, Blog $blog)
+    public function destroy(Blog $blog)
     {
 
         if($blog->user_id != auth()->id()){
@@ -62,7 +62,7 @@ class BlogsController extends Controller
 
         $blogx->delete();
 
-       return redirect(env('APP_URL') . 'blogs/index');
+        return redirect(env('APP_URL') . 'blogs/index');
 
     }
 }
