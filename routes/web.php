@@ -119,6 +119,9 @@ Route::delete('/admin-panel/product/{product}',[AdminController::class,'destroy'
 // Delete Blog
 Route::get('/blogs/{blog}/delete',[BlogsController::class,'destroy'])->middleware('auth');
 
+// Delete Comment
+Route::get('/blogs/{comment}/remove',[CommentController::class,'destroy'])->middleware('auth');
+
 // Show Single Service
 Route::get('/services/{service}',[ServiceController::class,'show']);
 
