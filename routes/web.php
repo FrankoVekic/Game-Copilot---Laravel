@@ -119,6 +119,9 @@ Route::put('/admin-panel/{product}',[AdminController::class,'update'])->middlewa
 // Update Blog
 Route::put('/blogs/{blog}',[BlogsController::class,'update'])->middleware('auth');
 
+// Update Comment
+Route::put('/blogs/comment/{comment}',[CommentController::class,'update'])->middleware('auth');
+
 // Delete Service
 Route::delete('/admin-panel/service/{service}',[ServiceController::class,'destroy'])->middleware('admin');
 

@@ -20,7 +20,7 @@
     {{ $comment->user->name }}<span>{{ $comment->created_at }}</span>
     @if($comment->user->id == auth()->user()->id)
     <a class="rply" onclick="return confirm('Are you sure you want to delete this comment?');" href="{{ env('APP_URL') }}blogs/{{ $comment->id }}/remove"><i class="fa fa-trash" aria-hidden="true"></i></a>
-    <a class="rply" style="margin-right:10px;" href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
+    <a class="rply" style="margin-right:10px;" href="{{ env('APP_URL') }}blogs/comment/{{ $comment->id }}/edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
     @endif
 </p>
     <p> {{ $comment->text }}</p>
