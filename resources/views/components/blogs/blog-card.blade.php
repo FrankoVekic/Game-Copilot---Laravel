@@ -3,7 +3,7 @@
     <div class="full testimonial_simple_say margin_bottom_30_all" style="margin-top:0;">
     @unless (auth()->id() !== $blog->user_id)
       <div style="text-align:right;">
-              <a style="margin-right:10px;" href=""><i style="color:#1E90FF; font-size:20px" class="fa fa-pencil" aria-hidden="true"></i></a>
+              <a style="margin-right:10px;" href="{{ env('APP_URL') }}blogs/{{ $blog->id }}/edit"><i style="color:#1E90FF; font-size:20px" class="fa fa-pencil" aria-hidden="true"></i></a>
               <a onclick="return confirm('Are you sure you want to delete this blog?');" href="{{ env('APP_URL') }}blogs/{{ $blog->id }}/delete"><i style="color:#1E90FF; font-size:20px" class="fa fa-trash" aria-hidden="true"></i></a>
             </div>
         @endunless

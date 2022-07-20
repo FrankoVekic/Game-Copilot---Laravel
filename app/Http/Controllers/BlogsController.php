@@ -65,4 +65,23 @@ class BlogsController extends Controller
         return redirect(env('APP_URL') . 'blogs/index');
 
     }
+
+    public function edit(Blog $blog)
+    {
+        return view('blogs.edit-blog',[
+            'blog'=>$blog
+        ]);
+    }
+
+    public function update(Request $request, Blog $blog)
+    {
+        $data = $request->validate([
+            'title'=>['required','min:3','max:200'],
+            'description'=>'required'
+        ]);
+
+        $blog->update($data);
+        
+        return redirect(env('APP_URL') . 'blogs/index');
+    }
 }

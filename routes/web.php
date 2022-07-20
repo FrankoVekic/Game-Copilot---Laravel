@@ -89,8 +89,14 @@ Route::get('/admin-panel/create_service',[ServiceController::class,'create'])->m
 // Show Edit Form for Products
 Route::get('/admin-panel/product/{product}/edit',[AdminController::class,'edit'])->middleware(['admin']);
 
-// Show Edit Form for Products
+// Show Edit Form for Services
 Route::get('/admin-panel/service/{service}/edit',[ServiceController::class,'edit'])->middleware(['admin']);
+
+// Show Edit Form for Blogs
+Route::get('/blogs/{blog}/edit',[BlogsController::class,'edit'])->middleware('auth');
+
+// Show Edit Form for Comments
+Route::get('/blogs/comment/{comment}/edit',[CommentController::class,'edit'])->middleware('auth');
 
 // Store Equipment 
 Route::post('/admin-panel/store_equipment',[AdminController::class,'store_equipment'])->middleware(['admin']);
@@ -109,6 +115,9 @@ Route::post('/blogs/post',[CommentController::class,'store'])->middleware('auth'
 
 // Update Product
 Route::put('/admin-panel/{product}',[AdminController::class,'update'])->middleware('admin');
+
+// Update Blog
+Route::put('/blogs/{blog}',[BlogsController::class,'update'])->middleware('auth');
 
 // Delete Service
 Route::delete('/admin-panel/service/{service}',[ServiceController::class,'destroy'])->middleware('admin');
